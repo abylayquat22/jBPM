@@ -1,0 +1,874 @@
+{
+  "version": 1,
+  "name": "DEPLOY",
+  "description": "",
+  "flow": {
+    "nodes": {
+      "GaZwzape": {
+        "type": "ev/endpoint@3",
+        "pos": {
+          "x": 488,
+          "y": -2960
+        },
+        "config": {
+          "inputs": [],
+          "data": "",
+          "language": "json",
+          "allowAnyType": false,
+          "inputs__expanded": true
+        },
+        "ui": {
+          "data": {
+            "triggerType": "ev/endpoint@3"
+          },
+          "namedInputsExpanded": true
+        },
+        "group": null
+      },
+      "LK4NB6qI": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 40,
+          "y": 64
+        },
+        "config": {
+          "element": {
+            "id": "24785763-b9a99678-acb4-4185-aca7-73fb0e435d93",
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "name": "Получение списка контейнеров",
+            "method": "GET"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "auto",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": true
+        },
+        "group": "7r3YOF4j"
+      },
+      "TOQ5tT09": {
+        "type": "logic/manipulate@1",
+        "pos": {
+          "x": 416,
+          "y": 64
+        },
+        "size": {
+          "width": 323,
+          "height": 64
+        },
+        "config": {
+          "language": "ts",
+          "query": "",
+          "tscript": "body.result[\"kie-containers\"][\"kie-container\"].map(c => c[\"container-id\"])",
+          "variables": [
+            {
+              "id": "ObLrRx5n",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "body",
+              "key": "body",
+              "__noIn": true
+            }
+          ],
+          "variables__expanded": true
+        },
+        "ui": {
+          "data": {
+            "blockTitle": "Извлечение списка ID контейнеров"
+          },
+          "namedInputsExpanded": true
+        },
+        "group": "7r3YOF4j"
+      },
+      "DfvDtAcB": {
+        "type": "LIST_TO_STREAM",
+        "pos": {
+          "x": 816,
+          "y": 136
+        },
+        "config": {},
+        "ui": {
+          "data": {}
+        },
+        "group": "7r3YOF4j"
+      },
+      "0VianG5J": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 984,
+          "y": 88
+        },
+        "config": {
+          "element": {
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "id": "24785763-3717c351-a9bd-4074-b632-1e1a17bd6c8f",
+            "name": "Удаление контейнера",
+            "method": "DELETE"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "auto",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": true
+        },
+        "group": "7r3YOF4j"
+      },
+      "4GOsPbRl": {
+        "type": "STREAM_TO_LIST",
+        "pos": {
+          "x": 1328,
+          "y": 136
+        },
+        "config": {},
+        "ui": {
+          "data": {}
+        },
+        "group": "7r3YOF4j"
+      },
+      "5A_ggg0O": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 120,
+          "y": 184
+        },
+        "config": {
+          "element": {
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "id": "24785763-e99f7a84-c471-4fda-9553-e8c71015edd6",
+            "name": "Deploy",
+            "method": "POST"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "auto",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "color": "grey",
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": false
+        },
+        "group": "LS1XoCii"
+      },
+      "1pkpsAe_": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 856,
+          "y": 184
+        },
+        "config": {
+          "element": {
+            "id": "24785763-a67ba8a7-32b6-42d3-97b3-181d2f7386e6",
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "name": "Создание контейнера",
+            "method": "PUT"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "auto",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": true
+        },
+        "group": "LS1XoCii"
+      },
+      "w867vyeS": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 1224,
+          "y": 184
+        },
+        "config": {
+          "element": {
+            "id": "24785763-3587098f-fb2c-43fe-b14d-b6d3c41d2c84",
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "name": "Получение контейнера",
+            "method": "GET"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "auto",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": false
+        },
+        "group": "LS1XoCii"
+      },
+      "tHtJY4GO": {
+        "type": "value/template@1",
+        "pos": {
+          "x": 2120,
+          "y": 136
+        },
+        "size": {
+          "width": 336,
+          "height": 184
+        },
+        "config": {
+          "data": "<!DOCTYPE html>\r\n<html lang=\"ru\">\r\n\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n  <link\r\n    href=\"https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@400;500&display=swap\"\r\n    rel=\"stylesheet\">\r\n  <style>\r\n    :root {\r\n      --s0: #ffffff;\r\n      --s1: #f5f6f8;\r\n      --s2: #edeef2;\r\n      --s3: #e2e4ea;\r\n      --b0: rgba(0, 0, 0, .06);\r\n      --b1: rgba(0, 0, 0, .10);\r\n      --b2: rgba(0, 0, 0, .16);\r\n      --t0: #0d1422;\r\n      --t1: #3a4560;\r\n      --t2: #7880a0;\r\n      --t3: #adb5c8;\r\n      --ac: #2563eb;\r\n      --ac-lt: #eff4ff;\r\n      --ac-bd: #bfcffe;\r\n      --ac-md: rgba(37, 99, 235, .1);\r\n      --ok: #16a34a;\r\n      --ok-lt: #f0fdf4;\r\n      --ok-bd: #bbf7d0;\r\n      --r-s: 6px;\r\n      --r-m: 10px;\r\n      --r-l: 14px;\r\n      --r-xl: 18px;\r\n      --r-2xl: 22px;\r\n      --sans: \"DM Sans\", -apple-system, system-ui, sans-serif;\r\n      --mono: \"DM Mono\", \"JetBrains Mono\", ui-monospace, monospace;\r\n      --sh-xs: 0 1px 2px rgba(0, 0, 0, .05);\r\n      --sh-s: 0 1px 4px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .04);\r\n      --sh-m: 0 2px 10px rgba(0, 0, 0, .07), 0 4px 24px rgba(0, 0, 0, .05);\r\n    }\r\n\r\n    *,\r\n    *::before,\r\n    *::after {\r\n      box-sizing: border-box;\r\n      margin: 0;\r\n      padding: 0\r\n    }\r\n\r\n    html {\r\n      background: var(--s1);\r\n    }\r\n\r\n    body {\r\n      background: var(--s1);\r\n      color: var(--t0);\r\n      font-family: var(--sans);\r\n      font-size: 13.5px;\r\n      line-height: 1.5;\r\n      -webkit-font-smoothing: antialiased;\r\n      padding-bottom: 72px;\r\n    }\r\n\r\n    .page {\r\n      max-width: 980px;\r\n      margin: 0 auto;\r\n      padding: 0 24px;\r\n    }\r\n\r\n    /* CHROME */\r\n    .chrome {\r\n      background: var(--s0);\r\n      border-bottom: 1px solid var(--b0);\r\n      box-shadow: 0 1px 3px rgba(0, 0, 0, .05);\r\n      position: sticky;\r\n      top: 0;\r\n      z-index: 100;\r\n      margin-bottom: 28px;\r\n    }\r\n\r\n    .chrome-inner {\r\n      max-width: 980px;\r\n      margin: 0 auto;\r\n      padding: 0 24px;\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 14px;\r\n      height: 56px;\r\n    }\r\n\r\n    .app-icon {\r\n      width: 34px;\r\n      height: 34px;\r\n      background: var(--ok);\r\n      border-radius: var(--r-m);\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      flex-shrink: 0;\r\n      box-shadow: 0 2px 8px rgba(22, 163, 74, .28);\r\n    }\r\n\r\n    .app-icon svg {\r\n      width: 16px;\r\n      height: 16px;\r\n      color: #fff;\r\n    }\r\n\r\n    .app-name {\r\n      font-size: 14px;\r\n      font-weight: 700;\r\n      color: var(--t0);\r\n      letter-spacing: -.025em;\r\n    }\r\n\r\n    .app-sub {\r\n      font-size: 11.5px;\r\n      color: var(--t2);\r\n      margin-top: 1px;\r\n    }\r\n\r\n    .chrome-right {\r\n      margin-left: auto;\r\n    }\r\n\r\n    .count-pill {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      gap: 7px;\r\n      font-size: 12px;\r\n      font-weight: 500;\r\n      color: var(--t1);\r\n      background: var(--s1);\r\n      border: 1px solid var(--b1);\r\n      padding: 4px 13px;\r\n      border-radius: 20px;\r\n      box-shadow: var(--sh-xs);\r\n    }\r\n\r\n    .count-dot {\r\n      width: 6px;\r\n      height: 6px;\r\n      border-radius: 50%;\r\n      background: var(--ok);\r\n      box-shadow: 0 0 0 2px rgba(22, 163, 74, .15);\r\n      animation: blink 2.5s ease-in-out infinite;\r\n    }\r\n\r\n    @keyframes blink {\r\n\r\n      0%,\r\n      100% {\r\n        opacity: 1\r\n      }\r\n\r\n      50% {\r\n        opacity: .3\r\n      }\r\n    }\r\n\r\n    /* CARD */\r\n    .dg-card {\r\n      background: var(--s0);\r\n      border: 1px solid var(--b0);\r\n      border-radius: var(--r-2xl);\r\n      overflow: hidden;\r\n      margin-bottom: 20px;\r\n      box-shadow: var(--sh-m);\r\n      animation: rise .28s cubic-bezier(.4, 0, .2, 1) both;\r\n    }\r\n\r\n    @keyframes rise {\r\n      from {\r\n        opacity: 0;\r\n        transform: translateY(8px)\r\n      }\r\n\r\n      to {\r\n        opacity: 1;\r\n        transform: translateY(0)\r\n      }\r\n    }\r\n\r\n    /* CARD HEADER */\r\n    .dg-head {\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 12px;\r\n      padding: 14px 20px;\r\n      background: linear-gradient(180deg, var(--s0) 0%, var(--s1) 100%);\r\n      border-bottom: 1px solid var(--b0);\r\n    }\r\n\r\n    .dg-head-icon {\r\n      width: 36px;\r\n      height: 36px;\r\n      background: var(--ok-lt);\r\n      border: 1px solid var(--ok-bd);\r\n      border-radius: var(--r-m);\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      flex-shrink: 0;\r\n    }\r\n\r\n    .dg-head-icon svg {\r\n      width: 16px;\r\n      height: 16px;\r\n      color: var(--ok);\r\n    }\r\n\r\n    .dg-title {\r\n      font-size: 15px;\r\n      font-weight: 700;\r\n      color: var(--t0);\r\n      letter-spacing: -.02em;\r\n      flex: 1;\r\n      min-width: 0;\r\n      white-space: nowrap;\r\n      overflow: hidden;\r\n      text-overflow: ellipsis;\r\n    }\r\n\r\n    .dg-title.mono {\r\n      font-family: var(--mono);\r\n      font-size: 13px;\r\n      font-weight: 500;\r\n      color: var(--t1);\r\n    }\r\n\r\n    /* TOOLBAR */\r\n    .dg-toolbar {\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 6px;\r\n      padding: 9px 14px;\r\n      background: var(--s1);\r\n      border-bottom: 1px solid var(--b0);\r\n    }\r\n\r\n    .dg-toolbar-label {\r\n      font-size: 11px;\r\n      font-weight: 600;\r\n      text-transform: uppercase;\r\n      letter-spacing: .07em;\r\n      color: var(--t3);\r\n      flex: 1;\r\n    }\r\n\r\n    .dg-btns {\r\n      display: flex;\r\n      gap: 4px;\r\n      align-items: center;\r\n    }\r\n\r\n    .dg-btn {\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 5px;\r\n      padding: 5px 11px;\r\n      font-size: 12px;\r\n      font-family: var(--sans);\r\n      font-weight: 500;\r\n      border: 1px solid var(--b1);\r\n      background: var(--s0);\r\n      border-radius: var(--r-s);\r\n      cursor: pointer;\r\n      color: var(--t1);\r\n      box-shadow: var(--sh-xs);\r\n      transition: all .12s;\r\n      white-space: nowrap;\r\n    }\r\n\r\n    .dg-btn svg {\r\n      width: 12px;\r\n      height: 12px;\r\n      flex-shrink: 0;\r\n    }\r\n\r\n    .dg-btn:hover {\r\n      border-color: var(--b2);\r\n      color: var(--t0);\r\n    }\r\n\r\n    .dg-btn:active {\r\n      transform: scale(.97);\r\n    }\r\n\r\n    .zg {\r\n      display: flex;\r\n    }\r\n\r\n    .zg .dg-btn {\r\n      padding: 5px 10px;\r\n    }\r\n\r\n    .zg .dg-btn:first-child {\r\n      border-radius: var(--r-s) 0 0 var(--r-s);\r\n      border-right: none;\r\n    }\r\n\r\n    .zg .dg-btn:last-child {\r\n      border-radius: 0 var(--r-s) var(--r-s) 0;\r\n    }\r\n\r\n    .zg .dg-btn:not(:first-child):not(:last-child) {\r\n      border-radius: 0;\r\n      border-right: none;\r\n    }\r\n\r\n    /* DIAGRAM CANVAS */\r\n    .dg-canvas {\r\n      overflow: auto;\r\n      max-height: 520px;\r\n      cursor: grab;\r\n      padding: 24px;\r\n      background: #fff;\r\n      display: flex;\r\n    }\r\n\r\n    .dg-canvas:active {\r\n      cursor: grabbing;\r\n    }\r\n\r\n    .dg-canvas svg {\r\n      display: block;\r\n      max-width: 100%;\r\n      height: auto;\r\n      transform-origin: top left;\r\n      transition: transform .2s cubic-bezier(.4, 0, .2, 1);\r\n    }\r\n\r\n    .dg-canvas::-webkit-scrollbar {\r\n      width: 6px;\r\n      height: 6px;\r\n    }\r\n\r\n    .dg-canvas::-webkit-scrollbar-track {\r\n      background: var(--s1);\r\n    }\r\n\r\n    .dg-canvas::-webkit-scrollbar-thumb {\r\n      background: var(--s3);\r\n      border-radius: 4px;\r\n    }\r\n\r\n    /* EMPTY */\r\n    .empty {\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-items: center;\r\n      justify-content: center;\r\n      padding: 64px 20px;\r\n      color: var(--t3);\r\n      gap: 10px;\r\n      font-size: 13px;\r\n      background: var(--s0);\r\n      border: 1px solid var(--b0);\r\n      border-radius: var(--r-2xl);\r\n      box-shadow: var(--sh-m);\r\n    }\r\n\r\n    .empty svg {\r\n      width: 36px;\r\n      height: 36px;\r\n      margin-bottom: 4px;\r\n      opacity: .35;\r\n    }\r\n  </style>\r\n</head>\r\n\r\n<body>\r\n\r\n  <div class=\"chrome\">\r\n    <div class=\"chrome-inner\">\r\n      <div class=\"app-icon\">\r\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n          stroke-linejoin=\"round\">\r\n          <rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\" />\r\n          <rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\" />\r\n          <rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\" />\r\n          <rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\" />\r\n        </svg>\r\n      </div>\r\n      <div>\r\n        <div class=\"app-name\">Process Diagram Viewer</div>\r\n        <div class=\"app-sub\">BPMN · Process Flows</div>\r\n      </div>\r\n      <div class=\"chrome-right\">\r\n        <div class=\"count-pill\">\r\n          <span class=\"count-dot\"></span>\r\n          <span id=\"dg-count\">—</span>&nbsp;diagrams\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"page\">\r\n\r\n    {{^responses}}\r\n    <div class=\"empty\">\r\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"\r\n        stroke-linejoin=\"round\">\r\n        <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" />\r\n        <path d=\"M3 9h18M9 21V9\" />\r\n      </svg>\r\n      No diagrams found\r\n    </div>\r\n    {{/responses}}\r\n\r\n    {{#responses}}\r\n    <div class=\"dg-card\">\r\n\r\n      <div class=\"dg-head\">\r\n        <div class=\"dg-head-icon\">\r\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\">\r\n            <polyline points=\"20 6 9 17 4 12\" />\r\n          </svg>\r\n        </div>\r\n        <div class=\"dg-title mono\">{{process_id}}</div>\r\n      </div>\r\n\r\n      <div class=\"dg-toolbar\">\r\n        <span class=\"dg-toolbar-label\">BPMN Diagram</span>\r\n        <div class=\"dg-btns\">\r\n          <div class=\"zg\">\r\n            <button class=\"dg-btn\" onclick=\"zoom(this,.3)\" title=\"Zoom in\">\r\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\">\r\n                <line x1=\"12\" y1=\"5\" x2=\"12\" y2=\"19\" />\r\n                <line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\" />\r\n              </svg>\r\n            </button>\r\n            <button class=\"dg-btn\" onclick=\"zoom(this,-.3)\" title=\"Zoom out\">\r\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\">\r\n                <line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\" />\r\n              </svg>\r\n            </button>\r\n            <button class=\"dg-btn\" onclick=\"zoom(this,0)\" title=\"Reset\">\r\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\">\r\n                <path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" />\r\n                <path d=\"M3 3v5h5\" />\r\n              </svg>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"dg-canvas\">{{{svg}}}</div>\r\n\r\n    </div>\r\n    {{/responses}}\r\n\r\n  </div>\r\n\r\n  <script>\r\n    (function () {\r\n      var cards = document.querySelectorAll('.dg-card');\r\n      var el = document.getElementById('dg-count');\r\n      if (el) el.textContent = cards.length;\r\n    })();\r\n\r\n    function zoom(btn, delta) {\r\n      var canvas = btn.closest('.dg-card').querySelector('.dg-canvas');\r\n      var svg = canvas && canvas.querySelector('svg');\r\n      if (!svg) return;\r\n      if (delta === 0) {\r\n        canvas.dataset.zoom = '1';\r\n        svg.style.transform = 'scale(1)';\r\n        return;\r\n      }\r\n      var cur = parseFloat(canvas.dataset.zoom || '1');\r\n      var next = Math.min(4, Math.max(.2, cur + delta));\r\n      canvas.dataset.zoom = next;\r\n      svg.style.transform = 'scale(' + next + ')';\r\n    }\r\n  </script>\r\n</body>\r\n\r\n</html>",
+          "parser": "text",
+          "variables": [
+            {
+              "id": "UI-GfANu",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "",
+              "key": "responses",
+              "__noIn": true
+            }
+          ],
+          "variables__expanded": true
+        },
+        "ui": {
+          "color": "teal",
+          "data": {
+            "blockTitle": "Генерация диаграммы"
+          },
+          "namedInputsExpanded": true
+        },
+        "group": "nKuK05vS"
+      },
+      "NdqtVpaj": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 1080,
+          "y": 136
+        },
+        "config": {
+          "element": {
+            "id": "24785763-8ac79451-8ea4-4636-94d4-c1da14175748",
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "name": "Статическая диаграмма процесса",
+            "method": "GET"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "text",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "color": "teal",
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": true
+        },
+        "group": "nKuK05vS"
+      },
+      "nlZUXHOY": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 160,
+          "y": 376
+        },
+        "config": {
+          "element": {
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "id": "24785763-54377528-89f9-4841-b41c-9d70570b5c10",
+            "inExtensibleCollection": false,
+            "name": "Получение списка процессов",
+            "method": "GET"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "auto",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "color": "teal",
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": false
+        },
+        "group": "nKuK05vS"
+      },
+      "Hp93inyK": {
+        "type": "logic/manipulate@1",
+        "pos": {
+          "x": 536,
+          "y": 304
+        },
+        "size": {
+          "width": 323,
+          "height": 64
+        },
+        "config": {
+          "language": "ts",
+          "query": "",
+          "tscript": "body.processes.map(p => p[\"process-id\"])",
+          "variables": [
+            {
+              "id": "ObLrRx5n",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "body",
+              "key": "body",
+              "__noIn": true
+            }
+          ],
+          "variables__expanded": true
+        },
+        "ui": {
+          "color": "teal",
+          "data": {
+            "blockTitle": "Извлечение списка ID процессов"
+          },
+          "namedInputsExpanded": true
+        },
+        "group": "nKuK05vS"
+      },
+      "7f815t5v": {
+        "type": "LIST_TO_STREAM",
+        "pos": {
+          "x": 904,
+          "y": 112
+        },
+        "config": {},
+        "ui": {
+          "color": "teal",
+          "data": {
+            "blockTitle": "For 1"
+          }
+        },
+        "group": "nKuK05vS"
+      },
+      "pT8SDt9w": {
+        "type": "STREAM_TO_LIST",
+        "pos": {
+          "x": 1936,
+          "y": 168
+        },
+        "config": {},
+        "ui": {
+          "color": "teal",
+          "data": {
+            "blockTitle": "Collect 1"
+          }
+        },
+        "group": "nKuK05vS"
+      },
+      "h57o7A18": {
+        "type": "task/http-request@1",
+        "pos": {
+          "x": 496,
+          "y": 184
+        },
+        "config": {
+          "element": {
+            "id": "24785763-180a1a84-2700-4296-b975-0cb91f4ce3a5",
+            "collection": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "name": "Check",
+            "method": "GET"
+          },
+          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "parseBody": "auto",
+          "requestVariables": [],
+          "scriptsModifyEnvVars": true,
+          "trackGlobalEnvironment": true,
+          "requestVariables__expanded": true
+        },
+        "ui": {
+          "data": {},
+          "namedInputsExpanded": true,
+          "requestVariablesExpanded": false
+        },
+        "group": "LS1XoCii"
+      },
+      "YNLrPasM": {
+        "type": "DELAY",
+        "pos": {
+          "x": 328,
+          "y": 48
+        },
+        "config": {
+          "delay": "3000"
+        },
+        "ui": {
+          "data": {}
+        },
+        "group": "LS1XoCii"
+      },
+      "Mr5B2Qn6": {
+        "type": "logic/manipulate@1",
+        "pos": {
+          "x": 1520,
+          "y": 104
+        },
+        "size": {
+          "width": 304,
+          "height": 104
+        },
+        "config": {
+          "language": "ts",
+          "query": "",
+          "tscript": "{ process_id, svg }",
+          "variables": [
+            {
+              "id": "ovm6izY0",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "",
+              "key": "process_id",
+              "__noIn": true
+            },
+            {
+              "id": "qqMdsWEZ",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "body",
+              "key": "svg",
+              "__noIn": true
+            }
+          ],
+          "variables__expanded": true
+        },
+        "ui": {
+          "color": "teal",
+          "data": {},
+          "namedInputsExpanded": true
+        },
+        "group": "nKuK05vS"
+      },
+      "UAXNa5io": {
+        "type": "output/viewer@1",
+        "pos": {
+          "x": -80,
+          "y": -56
+        },
+        "size": {
+          "width": 800,
+          "height": 640
+        },
+        "config": {},
+        "ui": {
+          "color": "purple",
+          "data": {
+            "displayType": "markup|html",
+            "genericLabel": "Результат"
+          }
+        },
+        "group": "Wu7HBjSh"
+      },
+      "0QJ93f3s": {
+        "type": "logic/manipulate@1",
+        "pos": {
+          "x": 42,
+          "y": 76
+        },
+        "size": {
+          "width": 304,
+          "height": 104
+        },
+        "config": {
+          "language": "ts",
+          "query": "",
+          "tscript": "const errors = response.tests\r\n    .filter(t => !t?.passed)\r\n    .map(t => t.error?.message)\r\n    .map(m => JSON.parse(m))\r\n    .flat()\r\n    .filter(Boolean);\r\n\r\n[...new Set(errors)];\r\n    ",
+          "variables": [
+            {
+              "id": "njn9SQXc",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "",
+              "key": "response",
+              "__noIn": true
+            }
+          ],
+          "variables__expanded": true
+        },
+        "ui": {
+          "color": "pink",
+          "data": {
+            "blockTitle": "Извлечение ошибки"
+          },
+          "namedInputsExpanded": true
+        },
+        "group": "d2MRRRfx"
+      },
+      "6WmdL_rc": {
+        "type": "value/template@1",
+        "pos": {
+          "x": 434,
+          "y": 76
+        },
+        "size": {
+          "width": 316,
+          "height": 108
+        },
+        "config": {
+          "data": "<style>\r\n  :root {\r\n    --s0: #ffffff;\r\n    --s1: #f5f6f8;\r\n    --s2: #edeef2;\r\n    --s3: #e2e4ea;\r\n    --b0: rgba(0, 0, 0, .06);\r\n    --b1: rgba(0, 0, 0, .10);\r\n    --b2: rgba(0, 0, 0, .16);\r\n    --t0: #0d1422;\r\n    --t1: #3a4560;\r\n    --t2: #7880a0;\r\n    --t3: #adb5c8;\r\n    --ac: #2563eb;\r\n    --ac-lt: #eff4ff;\r\n    --ac-bd: #bfcffe;\r\n    --er: #dc2626;\r\n    --er-lt: #fef2f2;\r\n    --er-bd: #fecaca;\r\n    --er-md: rgba(220, 38, 38, .08);\r\n    --r-s: 6px;\r\n    --r-m: 10px;\r\n    --r-l: 14px;\r\n    --r-xl: 18px;\r\n    --r-2xl: 22px;\r\n    --sans: \"DM Sans\", -apple-system, system-ui, sans-serif;\r\n    --mono: \"DM Mono\", \"JetBrains Mono\", ui-monospace, monospace;\r\n    --sh-xs: 0 1px 2px rgba(0, 0, 0, .05);\r\n    --sh-s: 0 1px 4px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .04);\r\n    --sh-m: 0 2px 10px rgba(0, 0, 0, .07), 0 4px 24px rgba(0, 0, 0, .05);\r\n  }\r\n\r\n  *,\r\n  *::before,\r\n  *::after {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0\r\n  }\r\n\r\n  html {\r\n    background: var(--s1);\r\n  }\r\n\r\n  body {\r\n    background: var(--s1);\r\n    color: var(--t0);\r\n    font-family: var(--sans);\r\n    font-size: 13.5px;\r\n    line-height: 1.5;\r\n    -webkit-font-smoothing: antialiased;\r\n    padding-bottom: 72px;\r\n  }\r\n\r\n  .page {\r\n    max-width: 980px;\r\n    margin: 0 auto;\r\n    padding: 0 24px;\r\n  }\r\n\r\n  /* CHROME */\r\n  .chrome {\r\n    background: var(--s0);\r\n    border-bottom: 1px solid var(--b0);\r\n    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);\r\n    position: sticky;\r\n    top: 0;\r\n    z-index: 100;\r\n    margin-bottom: 28px;\r\n  }\r\n\r\n  .chrome-inner {\r\n    max-width: 980px;\r\n    margin: 0 auto;\r\n    padding: 0 24px;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 14px;\r\n    height: 56px;\r\n  }\r\n\r\n  .app-icon {\r\n    width: 34px;\r\n    height: 34px;\r\n    background: var(--er);\r\n    border-radius: var(--r-m);\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-shrink: 0;\r\n    box-shadow: 0 2px 8px rgba(220, 38, 38, .28);\r\n  }\r\n\r\n  .app-icon svg {\r\n    width: 16px;\r\n    height: 16px;\r\n    color: #fff;\r\n  }\r\n\r\n  .app-name {\r\n    font-size: 14px;\r\n    font-weight: 700;\r\n    color: var(--t0);\r\n    letter-spacing: -.025em;\r\n  }\r\n\r\n  .app-sub {\r\n    font-size: 11.5px;\r\n    color: var(--t2);\r\n    margin-top: 1px;\r\n  }\r\n\r\n  .chrome-right {\r\n    margin-left: auto;\r\n  }\r\n\r\n  .count-pill {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 7px;\r\n    font-size: 12px;\r\n    font-weight: 500;\r\n    color: var(--t1);\r\n    background: var(--er-lt);\r\n    border: 1px solid var(--er-bd);\r\n    padding: 4px 13px;\r\n    border-radius: 20px;\r\n    box-shadow: var(--sh-xs);\r\n  }\r\n\r\n  .count-dot {\r\n    width: 6px;\r\n    height: 6px;\r\n    border-radius: 50%;\r\n    background: var(--er);\r\n    box-shadow: 0 0 0 2px rgba(220, 38, 38, .15);\r\n  }\r\n\r\n  /* EMPTY STATE */\r\n  .empty {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 64px 20px;\r\n    color: var(--t3);\r\n    gap: 10px;\r\n    font-size: 13px;\r\n    background: var(--s0);\r\n    border: 1px solid var(--b0);\r\n    border-radius: var(--r-2xl);\r\n    box-shadow: var(--sh-m);\r\n  }\r\n\r\n  .empty svg {\r\n    width: 36px;\r\n    height: 36px;\r\n    margin-bottom: 4px;\r\n    opacity: .35;\r\n  }\r\n\r\n  /* ERROR CARD */\r\n  .err-card {\r\n    background: var(--s0);\r\n    border: 1px solid var(--er-bd);\r\n    border-radius: var(--r-2xl);\r\n    overflow: hidden;\r\n    margin-bottom: 12px;\r\n    box-shadow: var(--sh-s);\r\n    animation: rise .22s cubic-bezier(.4, 0, .2, 1) both;\r\n  }\r\n\r\n  @keyframes rise {\r\n    from {\r\n      opacity: 0;\r\n      transform: translateY(6px)\r\n    }\r\n\r\n    to {\r\n      opacity: 1;\r\n      transform: translateY(0)\r\n    }\r\n  }\r\n\r\n  .err-head {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 12px;\r\n    padding: 13px 18px;\r\n    background: linear-gradient(180deg, var(--er-lt) 0%, #fff6f6 100%);\r\n    border-bottom: 1px solid var(--er-bd);\r\n  }\r\n\r\n  .err-num {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 26px;\r\n    height: 26px;\r\n    border-radius: 50%;\r\n    background: var(--er);\r\n    color: #fff;\r\n    font-size: 11px;\r\n    font-weight: 700;\r\n    flex-shrink: 0;\r\n    box-shadow: 0 2px 6px rgba(220, 38, 38, .3);\r\n  }\r\n\r\n  .err-label {\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    color: var(--er);\r\n    letter-spacing: .01em;\r\n    flex: 1;\r\n  }\r\n\r\n  .err-actions {\r\n    display: flex;\r\n    gap: 6px;\r\n    margin-left: auto;\r\n  }\r\n\r\n  .abtn {\r\n    font-size: 11px;\r\n    font-family: var(--sans);\r\n    font-weight: 500;\r\n    padding: 3px 10px;\r\n    border: 1px solid var(--er-bd);\r\n    background: var(--s0);\r\n    color: #b91c1c;\r\n    border-radius: var(--r-s);\r\n    cursor: pointer;\r\n    transition: all .1s;\r\n    outline: none;\r\n    box-shadow: var(--sh-xs);\r\n  }\r\n\r\n  .abtn:hover {\r\n    background: var(--er-lt);\r\n    border-color: var(--er);\r\n    color: var(--er);\r\n  }\r\n\r\n  .abtn.done {\r\n    color: #16a34a;\r\n    border-color: #bbf7d0;\r\n    background: #f0fdf4;\r\n  }\r\n\r\n  /* ERROR BODY */\r\n  .err-body {\r\n    padding: 14px 18px;\r\n    background: #fff;\r\n  }\r\n\r\n  .err-text {\r\n    font-family: var(--mono);\r\n    font-size: 11.5px;\r\n    color: #991b1b;\r\n    line-height: 1.7;\r\n    white-space: pre-wrap;\r\n    word-break: break-word;\r\n    background: var(--er-lt);\r\n    border: 1px solid var(--er-bd);\r\n    border-radius: var(--r-m);\r\n    padding: 12px 14px;\r\n    width: 100%;\r\n    display: block;\r\n    resize: vertical;\r\n    min-height: 36px;\r\n    max-height: 400px;\r\n    overflow-y: auto;\r\n    border: none;\r\n    outline: none;\r\n    background: transparent;\r\n  }\r\n\r\n  .err-text::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  .err-text::-webkit-scrollbar-thumb {\r\n    background: #fca5a5;\r\n    border-radius: 4px;\r\n  }\r\n\r\n  /* Wrap for background */\r\n  .err-text-wrap {\r\n    background: var(--er-lt);\r\n    border: 1px solid var(--er-bd);\r\n    border-radius: var(--r-m);\r\n    overflow: hidden;\r\n  }\r\n</style>\r\n\r\n\r\n\r\n<div class=\"chrome\">\r\n  <div class=\"chrome-inner\">\r\n    <div class=\"app-icon\">\r\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"\r\n        stroke-linejoin=\"round\">\r\n        <circle cx=\"12\" cy=\"12\" r=\"10\" />\r\n        <line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\" />\r\n        <line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\" />\r\n      </svg>\r\n    </div>\r\n    <div>\r\n      <div class=\"app-name\">Error Viewer</div>\r\n      <div class=\"app-sub\">Process Errors &amp; Exceptions</div>\r\n    </div>\r\n    <div class=\"chrome-right\">\r\n      <div class=\"count-pill\">\r\n        <span class=\"count-dot\"></span>\r\n        <span id=\"err-count\">—</span>&nbsp;errors\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"page\">\r\n\r\n  {{^errors}}\r\n  <div class=\"empty\">\r\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"\r\n      stroke-linejoin=\"round\">\r\n      <path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\" />\r\n      <polyline points=\"22 4 12 14.01 9 11.01\" />\r\n    </svg>\r\n    No errors found\r\n  </div>\r\n  {{/errors}}\r\n\r\n  {{#errors}}\r\n  <div class=\"err-card\">\r\n    <div class=\"err-head\">\r\n      <div class=\"err-num\">!</div>\r\n      <span class=\"err-label\">Error</span>\r\n      <div class=\"err-actions\">\r\n        <button class=\"abtn\" onclick=\"copyErr(this)\">copy</button>\r\n      </div>\r\n    </div>\r\n    <div class=\"err-body\">\r\n      <div class=\"err-text-wrap\">\r\n        <textarea class=\"err-text\" readonly spellcheck=\"false\" oninput=\"autoH(this)\">{{.}}</textarea>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  {{/errors}}\r\n\r\n</div>\r\n\r\n<script>\r\n  (function () {\r\n    var items = document.querySelectorAll('.err-card');\r\n    var el = document.getElementById('err-count');\r\n    if (el) el.textContent = items.length;\r\n\r\n    /* Number each error card */\r\n    items.forEach(function (card, i) {\r\n      var num = card.querySelector('.err-num');\r\n      if (num) num.textContent = i + 1;\r\n      var lbl = card.querySelector('.err-label');\r\n      if (lbl) lbl.textContent = 'Error #' + (i + 1);\r\n    });\r\n\r\n    /* Auto-height textareas */\r\n    document.querySelectorAll('.err-text').forEach(function (ta) {\r\n      autoH(ta);\r\n    });\r\n  })();\r\n\r\n  function autoH(ta) {\r\n    ta.style.height = 'auto';\r\n    ta.style.height = Math.min(ta.scrollHeight + 2, 400) + 'px';\r\n  }\r\n\r\n  function copyErr(btn) {\r\n    var ta = btn.closest('.err-card').querySelector('.err-text');\r\n    if (!ta) return;\r\n    _copy(ta.value, btn);\r\n  }\r\n\r\n  function _copy(text, btn) {\r\n    var orig = btn.textContent;\r\n    var done = function () {\r\n      btn.textContent = 'copied!';\r\n      btn.classList.add('done');\r\n      setTimeout(function () { btn.textContent = orig; btn.classList.remove('done'); }, 1400);\r\n    };\r\n    if (navigator.clipboard) { navigator.clipboard.writeText(text).then(done); return; }\r\n    var ta = document.createElement('textarea');\r\n    ta.value = text; ta.style.cssText = 'position:fixed;opacity:0';\r\n    document.body.appendChild(ta); ta.select();\r\n    try { document.execCommand('copy'); done(); } catch (e) { }\r\n    document.body.removeChild(ta);\r\n  }\r\n</script>",
+          "parser": "text",
+          "variables": [
+            {
+              "id": "wu1ntLcw",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "",
+              "key": "errors",
+              "__noIn": true
+            }
+          ],
+          "variables__expanded": true
+        },
+        "ui": {
+          "color": "pink",
+          "data": {
+            "blockTitle": "Генерация ошибки"
+          },
+          "namedInputsExpanded": true
+        },
+        "group": "d2MRRRfx"
+      }
+    },
+    "modules": {},
+    "connections": {
+      "lK0dlWC9": {
+        "source": "LK4NB6qI",
+        "target": "TOQ5tT09",
+        "sourcePort": "success",
+        "targetPort": "variables|ObLrRx5n"
+      },
+      "96pLUY04": {
+        "source": "TOQ5tT09",
+        "target": "DfvDtAcB",
+        "sourcePort": "out",
+        "targetPort": "list"
+      },
+      "IMDIuBjH": {
+        "source": "0VianG5J",
+        "target": "4GOsPbRl",
+        "sourcePort": "success",
+        "targetPort": "stream"
+      },
+      "NBbmeOS1": {
+        "source": "1pkpsAe_",
+        "target": "w867vyeS",
+        "sourcePort": "success",
+        "targetPort": "AI"
+      },
+      "MEHKupqO": {
+        "source": "1pkpsAe_",
+        "target": "w867vyeS",
+        "sourcePort": "fail",
+        "targetPort": "AI"
+      },
+      "mp8s-zky": {
+        "source": "w867vyeS",
+        "target": "nlZUXHOY",
+        "sourcePort": "success",
+        "targetPort": "AI"
+      },
+      "LiGGTniM": {
+        "source": "nlZUXHOY",
+        "target": "Hp93inyK",
+        "sourcePort": "success",
+        "targetPort": "variables|ObLrRx5n"
+      },
+      "67uHrTzv": {
+        "source": "Hp93inyK",
+        "target": "7f815t5v",
+        "sourcePort": "out",
+        "targetPort": "list"
+      },
+      "8rABSQx3": {
+        "source": "pT8SDt9w",
+        "target": "tHtJY4GO",
+        "sourcePort": "list",
+        "targetPort": "variables|UI-GfANu"
+      },
+      "Peprm-kx": {
+        "source": "5A_ggg0O",
+        "target": "YNLrPasM",
+        "sourcePort": "success",
+        "targetPort": "data"
+      },
+      "4RzmhbuU": {
+        "source": "YNLrPasM",
+        "target": "h57o7A18",
+        "sourcePort": "data",
+        "targetPort": "AI"
+      },
+      "6SR4Pd3X": {
+        "source": "4GOsPbRl",
+        "target": "5A_ggg0O",
+        "sourcePort": "AO",
+        "targetPort": "AI"
+      },
+      "8GF4dsp1": {
+        "source": "Mr5B2Qn6",
+        "target": "pT8SDt9w",
+        "sourcePort": "out",
+        "targetPort": "stream"
+      },
+      "12EJfuqo": {
+        "source": "NdqtVpaj",
+        "target": "Mr5B2Qn6",
+        "sourcePort": "success",
+        "targetPort": "variables|qqMdsWEZ"
+      },
+      "9EYWlK3d": {
+        "source": "7f815t5v",
+        "target": "Mr5B2Qn6",
+        "sourcePort": "stream",
+        "targetPort": "variables|ovm6izY0"
+      },
+      "VRnNgmUB": {
+        "source": "h57o7A18",
+        "target": "1pkpsAe_",
+        "sourcePort": "success",
+        "targetPort": "AI"
+      },
+      "-CfGco6C": {
+        "source": "5A_ggg0O",
+        "target": "h57o7A18",
+        "sourcePort": "fail",
+        "targetPort": "AI"
+      },
+      "w29ddsJT": {
+        "source": "0VianG5J",
+        "target": "4GOsPbRl",
+        "sourcePort": "fail",
+        "targetPort": "stream"
+      },
+      "174gi7JB": {
+        "source": "GaZwzape",
+        "target": "LK4NB6qI",
+        "sourcePort": "data",
+        "targetPort": "AI"
+      },
+      "zGz-57R7": {
+        "source": "tHtJY4GO",
+        "target": "UAXNa5io",
+        "sourcePort": "data",
+        "targetPort": "data"
+      },
+      "Do7hL2Gj": {
+        "source": "0QJ93f3s",
+        "target": "6WmdL_rc",
+        "sourcePort": "out",
+        "targetPort": "variables|wu1ntLcw"
+      },
+      "cSKYcHDG": {
+        "source": "LK4NB6qI",
+        "target": "0QJ93f3s",
+        "sourcePort": "fail",
+        "targetPort": "variables|njn9SQXc"
+      },
+      "MmqNfUQR": {
+        "source": "h57o7A18",
+        "target": "0QJ93f3s",
+        "sourcePort": "fail",
+        "targetPort": "variables|njn9SQXc"
+      },
+      "TpKwo3Bi": {
+        "source": "NdqtVpaj",
+        "target": "0QJ93f3s",
+        "sourcePort": "fail",
+        "targetPort": "variables|njn9SQXc"
+      },
+      "XiL9xUlr": {
+        "source": "w867vyeS",
+        "sourcePort": "fail",
+        "target": "0QJ93f3s",
+        "targetPort": "variables|njn9SQXc"
+      },
+      "Bv-4RP6c": {
+        "source": "nlZUXHOY",
+        "target": "0QJ93f3s",
+        "sourcePort": "fail",
+        "targetPort": "variables|njn9SQXc"
+      },
+      "duwbEdpl": {
+        "source": "6WmdL_rc",
+        "target": "UAXNa5io",
+        "sourcePort": "data",
+        "targetPort": "data"
+      }
+    },
+    "annotations": {},
+    "forms": {},
+    "groups": {
+      "7r3YOF4j": {
+        "ui": {
+          "pos": {
+            "x": 920,
+            "y": -3080
+          },
+          "size": {
+            "width": 1616,
+            "height": 624
+          },
+          "color": "blue"
+        },
+        "header": {
+          "title": "Удаление устаревших контейнеров"
+        }
+      },
+      "LS1XoCii": {
+        "ui": {
+          "pos": {
+            "x": 930,
+            "y": -2326
+          },
+          "size": {
+            "width": 1728,
+            "height": 728
+          },
+          "color": "blue"
+        },
+        "header": {
+          "title": "Деплой"
+        }
+      },
+      "nKuK05vS": {
+        "ui": {
+          "pos": {
+            "x": 924,
+            "y": -1524
+          },
+          "size": {
+            "width": 2944,
+            "height": 696
+          },
+          "color": "teal"
+        },
+        "header": {
+          "title": "Получение результатов"
+        }
+      },
+      "Wu7HBjSh": {
+        "ui": {
+          "pos": {
+            "x": 898,
+            "y": -630
+          },
+          "size": {
+            "width": 672,
+            "height": 560
+          },
+          "color": "purple"
+        },
+        "header": {
+          "title": "РЕЗУЛЬТАТ ДЕПЛОЯ"
+        }
+      },
+      "d2MRRRfx": {
+        "ui": {
+          "pos": {
+            "x": -240,
+            "y": -2184
+          },
+          "size": {
+            "width": 800,
+            "height": 400
+          },
+          "color": "pink"
+        },
+        "header": {
+          "title": "Обработка ошибок"
+        }
+      }
+    },
+    "ports": {},
+    "io": {},
+    "description": "",
+    "webhook": {
+      "payloadContent": "body-only",
+      "responseType": "default"
+    },
+    "meta": {},
+    "scenes": {},
+    "scenarios": {},
+    "config": {
+      "definitions": {},
+      "constants": {}
+    },
+    "attributes": {
+      "name": "DEPLOY",
+      "latestVersion": {
+        "previous": null,
+        "type": "module",
+        "ports": {
+          "input": [],
+          "output": []
+        },
+        "settings": {},
+        "revoked": null,
+        "message": "",
+        "name": "1",
+        "sequence": 1,
+        "hash": {
+          "algo": "sha256",
+          "encoding": "base64",
+          "value": "sQXH4rAGrfC7Cce74WVuXgaXUzgnrWSdqIbu5vwKyAo="
+        },
+        "createdOn": "2026-03-11T19:39:36.589Z",
+        "createdBy": {
+          "user": 24785763,
+          "team": 14198720
+        },
+        "updatedOn": "2026-03-11T19:39:36.589Z",
+        "updatedBy": {
+          "user": 24785763,
+          "team": 14198720
+        },
+        "id": "69b1c4f8abd65299d0aac267"
+      },
+      "parent": null,
+      "createdBy": 24785763,
+      "createdOn": "2026-03-11T19:21:56.711Z",
+      "updatedOn": "2026-03-11T19:49:52.756Z",
+      "fork": null,
+      "type": "module",
+      "workspace": "47bdc23d-6e6b-4d06-b4fd-10e7317246af",
+      "permissions": {
+        "canView": true,
+        "canExecute": true,
+        "canEdit": true,
+        "canDelete": true,
+        "canDeploy": true,
+        "canUpdateRoles": false,
+        "canFork": false,
+        "canEditForkDetails": false,
+        "canAddComment": false,
+        "canResolveComment": false,
+        "canDeleteComment": false
+      },
+      "activeTargets": null
+    }
+  },
+  "lockbox": {},
+  "info": {
+    "_postman_id": "30dd64b9-5867-4215-87a2-17ff65333c4f",
+    "_postman_cloud_id": "69b1c0d451676b0dfed0e616"
+  },
+  "_postman_exported_at": "2026-03-11T21:29:24.810Z",
+  "_postman_exported_using": "Postman/Local Mode"
+}

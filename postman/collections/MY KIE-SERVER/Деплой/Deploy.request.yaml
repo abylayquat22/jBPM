@@ -1,0 +1,36 @@
+$kind: http-request
+url: "{{base_url}}/business-central/rest/spaces/{{space}}/projects/{{project}}/\
+  branches/{{branch}}/maven/deploy"
+method: POST
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Server response status\", function () {\r
+
+      \    if (pm.response.status !== \"Accepted\") {\r
+
+      \        throw new Error(JSON.stringify([\"Business Central response
+      status is not 'Accepted'\"]));\r
+
+      \    }\r
+
+      \r
+
+      \    if (pm.response.json().status !== \"APPROVED\") {\r
+
+      \        throw new Error(JSON.stringify(['Incorrect business central
+      response status']))\r
+
+      \    }\r
+
+      \r
+
+      \    pm.environment.set(\"deployJobId\", pm.response.json().jobId);\r
+
+      });"
+    language: text/javascript
+order: 1000

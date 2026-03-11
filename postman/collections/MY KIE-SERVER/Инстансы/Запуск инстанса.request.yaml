@@ -1,0 +1,61 @@
+$kind: http-request
+description: |
+  Generated from cURL: curl -u kieserver:kieserver1! \
+    -X PUT \
+    -H "Content-Type: application/xml" \
+    --data "<container-spec>
+              <container-id>${KIE_CONTAINER_ID}</container-id>
+              <release-id>
+                  <group-id>com.myspace</group-id>
+                  <artifact-id>kuat-sample</artifact-id>
+                  <version>1.0.0-SNAPSHOT</version>
+              </release-id>
+              <status>STARTED</status>
+           </container-spec>" \
+    ${KIE_SERVER_URL}/server/containers/${KIE_CONTAINER_ID}
+url: "{{base_url}}/kie-server/services/rest/server/containers/{{containerId}}/p\
+  rocesses/{{processId}}/instances"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: "{\r
+
+    \    \"inp_body\": {{inp_body_string}},\r
+
+    \    \"initiator\": \"{{username}}\"\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+scripts:
+  - type: afterResponse
+    code: "pm.environment.set(\"processInstanceId\", pm.response.text());\r
+
+      \r
+
+      pm.test(\"Server response status\", function () {\r
+
+      \    if (pm.response.status !== \"Created\") {\r
+
+      \        let msg = pm.response.text();\r
+
+      \        throw new Error(JSON.stringify([msg]));\r
+
+      \    }\r
+
+      });\r\n"
+    language: text/javascript
+  - type: beforeRequest
+    code: "const payload = pm.environment.get(\"inp_body\");\r
+
+      \r
+
+      pm.environment.set(\"inp_body_string\", JSON.stringify(payload));"
+    language: text/javascript
+order: 2000
