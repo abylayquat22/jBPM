@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/processes/definitions/:processId"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: processId
+      value: string
+      description: process id to load process definition
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "processes": [
+          {
+            "associatedEntities": null,
+            "serviceTasks": null,
+            "processVariables": null,
+            "reusableSubProcesses": null,
+            "process-id": "Employee_Rostering.Process1",
+            "process-name": "Process1",
+            "process-version": "1.0",
+            "package": "employeerostering.employeerostering",
+            "container-id": "employee-rostering",
+            "dynamic": false
+          }
+        ]
+      }
+order: 1000

@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/errors/:errorId"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process error belongs to
+    - key: errorId
+      value: xxx-yyy-zzz
+      description: identifier of error to be loaded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "id": "a7982044-019d-4d4a-be3f-781f4ddca1df",
+        "type": "Process",
+        "container-id": "mortgage-process_1.0.0-SNAPSHOT",
+        "process-instance-id": 4,
+        "process-id": "Mortgage_Process.MortgageApprovalProcess",
+        "activity-id": 12,
+        "activity-name": "Validation",
+        "job-id": null,
+        "error-msg": "[Mortgage_Process.MortgageApprovalProcess:4 - Validation:3] -- [Mortgage_Process.MortgageApprovalProcess:4 - Validation:3] -- null",
+        "error": null,
+        "acknowledged": false,
+        "acknowledged-by": null,
+        "acknowledged-at": null,
+        "error-date": 1539627364193
+      }
+order: 1000

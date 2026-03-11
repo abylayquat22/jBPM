@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/cases/:caseDefId/instances"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id where the case definition resides
+    - key: caseDefId
+      value: CASE-0000000001
+      description: case definition id that new instance should be created from
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 3000

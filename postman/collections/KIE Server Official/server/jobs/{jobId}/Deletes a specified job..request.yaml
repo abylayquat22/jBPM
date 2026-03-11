@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{baseUrl}}/server/jobs/:jobId"
+method: DELETE
+pathVariables:
+  - key: jobId
+    value: "123"
+    description: identifier of the asynchronous job to be canceled
+examples: ./.resources/Deletes a specified job..resources/examples
+order: 4000

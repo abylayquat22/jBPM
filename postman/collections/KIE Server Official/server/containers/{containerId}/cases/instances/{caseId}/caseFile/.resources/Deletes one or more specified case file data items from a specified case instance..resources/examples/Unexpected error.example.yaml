@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId/caseFi\
+    le?dataId=string"
+  method: DELETE
+  queryParams:
+    - key: dataId
+      value: string
+      description: one or more names of the data items to be removed from case file
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case instance belongs to
+    - key: caseId
+      value: CASE-00000000001
+      description: identifier of the case instance
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

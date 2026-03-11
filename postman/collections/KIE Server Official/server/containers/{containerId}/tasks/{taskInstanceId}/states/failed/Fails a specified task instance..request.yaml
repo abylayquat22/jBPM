@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/states/f\
+  ailed?user=string"
+method: PUT
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: user
+    value: string
+    description: optional user id to be used instead of authenticated user - only
+      when bypass authenticated user is enabled
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of the task instance that should be failed
+body:
+  type: json
+  content: string
+examples: ./.resources/Fails a specified task instance..resources/examples
+order: 1000

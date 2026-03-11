@@ -1,0 +1,70 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/config"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "response": [
+          {
+            "type": "SUCCESS",
+            "msg": "Container command-script-container successfully deployed with module com.redhat:Project1:1.0.",
+            "result": {
+              "kie-container": {
+                "container-id": "command-script-container",
+                "release-id": {
+                  "group-id": "com.redhat",
+                  "artifact-id": "Project1",
+                  "version": "1.0"
+                },
+                "resolved-release-id": {
+                  "group-id": "com.redhat",
+                  "artifact-id": "Project1",
+                  "version": "1.0"
+                },
+                "status": "DISPOSING",
+                "scanner": {
+                  "status": "DISPOSED",
+                  "poll-interval": null
+                },
+                "config-items": [],
+                "messages": [
+                  {
+                    "severity": "INFO",
+                    "timestamp": {
+                      "java.util.Date": 1538768011150
+                    },
+                    "content": [
+                      "Container command-script-container successfully created with module com.redhat:Project1:1.0."
+                    ]
+                  }
+                ],
+                "container-alias": null
+              }
+            }
+          },
+          {
+            "type": "SUCCESS",
+            "msg": "Container command-script-container successfully called.",
+            "result": "{\n  \"results\" : [ ],\n  \"facts\" : [ ]\n}"
+          },
+          {
+            "type": "SUCCESS",
+            "msg": "Container command-script-container successfully disposed.",
+            "result": null
+          }
+        ]
+      }
+order: 1000

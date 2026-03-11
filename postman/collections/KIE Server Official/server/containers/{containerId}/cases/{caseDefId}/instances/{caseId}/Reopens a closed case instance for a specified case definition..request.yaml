@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/cases/:caseDefId/instances/:caseId"
+method: PUT
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id where the case definition resides
+  - key: caseDefId
+    value: evaluation
+    description: case definition id that new instance should be created from
+  - key: caseId
+    value: string
+    description: identifier of the case instance
+body:
+  type: json
+  content: string
+examples: ./.resources/Reopens a closed case instance for a specified case
+  definition..resources/examples
+order: 1000

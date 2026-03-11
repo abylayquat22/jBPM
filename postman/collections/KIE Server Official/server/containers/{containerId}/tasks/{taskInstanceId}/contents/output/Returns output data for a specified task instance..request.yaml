@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/contents\
+  /output"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of the task instance that output data should be loaded from
+examples: ./.resources/Returns output data for a specified task
+  instance..resources/examples
+order: 1000

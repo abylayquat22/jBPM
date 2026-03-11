@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/states/n\
+  ominated?user=string&potOwner=string&potOwner=string"
+method: PUT
+queryParams:
+  - key: user
+    value: string
+    description: optional user id to be used instead of authenticated user - only
+      when bypass authenticated user is enabled
+  - key: potOwner
+    value: string
+    description: list of users that the task should be nominated to
+  - key: potOwner
+    value: string
+    description: list of users that the task should be nominated to
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of the task instance that should be nominated
+examples: ./.resources/Nominates one or more potential owners to whom the task
+  instance should be assigned..resources/examples
+order: 1000

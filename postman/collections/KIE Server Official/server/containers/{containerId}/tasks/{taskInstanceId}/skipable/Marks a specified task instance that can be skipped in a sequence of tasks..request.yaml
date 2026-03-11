@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/skipable"
+method: PUT
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of the task instance where skipable flag should be updated
+body:
+  type: json
+  content: string
+examples: ./.resources/Marks a specified task instance that can be skipped in a
+  sequence of tasks..resources/examples
+order: 1000

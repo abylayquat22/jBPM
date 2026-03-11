@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+    stanceId/nodes/instances?activeOnly=true&completedOnly=true&processInstance\
+    HistoryType=123&page=0&pageSize=10"
+  method: GET
+  queryParams:
+    - key: activeOnly
+      value: "true"
+      description: instructs if active nodes only should be collected, defaults to false
+    - key: completedOnly
+      value: "true"
+      description: instructs if completed nodes only should be collected, defaults to false
+    - key: processInstanceHistoryType
+      value: "123"
+      description: entry type from the history
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of the process instance that history should be collected for
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+  cessInstanceId/timers/:timerId?relative=true"
+method: PUT
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: relative
+    value: "true"
+    description: optional flag that indicates if the time expression is relative to
+      the current date or not, defaults to true
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of process instance that timer belongs to
+  - key: timerId
+    value: "99"
+    description: identifier of timer instance to be updated
+body:
+  type: json
+  content: string
+examples: ./.resources/Updates a specified timer for a specified process
+  instance..resources/examples
+order: 1000

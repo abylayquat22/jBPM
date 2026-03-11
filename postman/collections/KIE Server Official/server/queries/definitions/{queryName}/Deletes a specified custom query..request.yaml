@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/definitions/:queryName"
+method: DELETE
+pathVariables:
+  - key: queryName
+    value: customQuery
+    description: identifier of the query definition to be deleted
+examples: ./.resources/Deletes a specified custom query..resources/examples
+order: 6000

@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+  stanceId?withVars=true"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: withVars
+    value: "true"
+    description: indicates if process instance variables should be loaded or not
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of the process instance to be fetched
+examples: ./.resources/Returns information about a specified process instance in
+  a specified KIE container..resources/examples
+order: 8000

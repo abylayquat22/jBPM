@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case instance belongs to
+    - key: caseId
+      value: CASE-00000000001
+      description: identifier of the case instance
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 1000

@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/instances/:containerId"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/xml
+  pathVariables:
+    - key: containerId
+      value: string
+      description: Container id where rules should be evaluated on
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "type": "SUCCESS",
+        "msg": "string",
+        "result": {}
+      }
+order: 2000

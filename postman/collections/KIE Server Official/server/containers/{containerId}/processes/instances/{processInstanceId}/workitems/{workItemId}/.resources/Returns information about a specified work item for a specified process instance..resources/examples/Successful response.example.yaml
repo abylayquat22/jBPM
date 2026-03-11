@@ -1,0 +1,69 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+    stanceId/workitems/:workItemId"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of the process instance that work item belongs to
+    - key: workItemId
+      value: "567"
+      description: identifier of the work item to retrieve
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "work-item-instance": [
+          {
+            "work-item-id": 4,
+            "work-item-name": "Human Task",
+            "work-item-state": 0,
+            "work-item-params": {
+              "application": {
+                "com.myspace.mortgage_app.Application": {
+                  "applicant": {
+                    "com.myspace.mortgage_app.Applicant": {
+                      "name": "NewName",
+                      "annualincome": 0,
+                      "address": null,
+                      "ssn": 0,
+                      "creditrating": null
+                    }
+                  },
+                  "property": {
+                    "com.myspace.mortgage_app.Property": {
+                      "age": 0,
+                      "address": "NewAddress",
+                      "locale": "",
+                      "saleprice": 0
+                    }
+                  },
+                  "downpayment": 0,
+                  "amortization": 0,
+                  "mortgageamount": null
+                }
+              },
+              "TaskName": "CorrectData",
+              "NodeName": "Correct Data",
+              "Skippable": "false",
+              "GroupId": "broker"
+            },
+            "process-instance-id": 4,
+            "container-id": "mortgage-process_1.0.0-SNAPSHOT",
+            "node-instance-id": 5,
+            "node-id": 6
+          }
+        ]
+      }
+order: 1000

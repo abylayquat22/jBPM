@@ -1,0 +1,37 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+  cessInstanceId/errors?includeAck=false&node=string&page=0&pageSize=10&sort=st\
+  ring&sortOrder=true"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: includeAck
+    value: "false"
+    description: optional flag that indicates if acknowledged errors should also be
+      collected, defaults to false
+  - key: node
+    value: string
+    description: optional name of the node in the process instance to filter by
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    description: optional sort direction (asc, desc) - defaults to asc
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of process instance that errors should be collected for
+examples: ./.resources/Returns all process execution errors for a specified
+  process instance..resources/examples
+order: 1000

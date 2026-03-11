@@ -1,0 +1,22 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/attachme\
+    nts/:attachmentId"
+  method: GET
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of the task instance that attachment belongs to
+    - key: attachmentId
+      value: "567"
+      description: identifier of the attachment to be loaded
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 3000

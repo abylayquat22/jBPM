@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/images/processes/instances/:pr\
+    ocessInstanceId?svgCompletedColor=%23C0C0C0&svgCompletedBorderColor=%230303\
+    03&svgActiveBorderColor=%231e90ff&svgInstanceBadgesShow=false&svgActiveAsyn\
+    cBorderColor=%23FF0000"
+  method: GET
+  queryParams:
+    - key: svgCompletedColor
+      value: "#C0C0C0"
+      description: svg completed node color
+    - key: svgCompletedBorderColor
+      value: "#030303"
+      description: svg completed node border color
+    - key: svgActiveBorderColor
+      value: "#1e90ff"
+      description: svg active node border color
+    - key: svgInstanceBadgesShow
+      value: "false"
+      description: show or hidden instance badges
+    - key: svgActiveAsyncBorderColor
+      value: "#FF0000"
+      description: svg active async node border color
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of the process instance that image should be loaded for
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

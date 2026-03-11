@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/states/c\
+    ompleted?user=string&auto-progress=true"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: user
+      value: string
+      description: optional user id to be used instead of authenticated user - only
+        when bypass authenticated user is enabled
+    - key: auto-progress
+      value: "true"
+      description: optional flag that allows to directlu claim and start task (if
+        needed) before completion
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of the task instance that should be completed
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

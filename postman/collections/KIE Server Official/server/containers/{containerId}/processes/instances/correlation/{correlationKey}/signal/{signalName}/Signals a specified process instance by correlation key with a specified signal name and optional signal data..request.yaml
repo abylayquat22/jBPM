@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances/correlatio\
+  n/:correlationKey/signal/:signalName"
+method: POST
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: correlationKey
+    value: "123"
+    description: correlation key of the process instance to be signaled
+  - key: signalName
+    value: EventReceived
+    description: signal name to be sent to process instance
+body:
+  type: json
+  content: string
+examples: ./.resources/Signals a specified process instance by correlation key
+  with a specified signal name and optional signal data..resources/examples
+order: 1000

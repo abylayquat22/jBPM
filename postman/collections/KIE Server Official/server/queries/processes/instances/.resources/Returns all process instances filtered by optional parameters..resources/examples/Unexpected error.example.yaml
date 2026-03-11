@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/processes/instances?status=3&initiator=string&\
+    processName=string&page=0&pageSize=10&sort=string&sortOrder=true"
+  method: GET
+  queryParams:
+    - key: status
+      value: "3"
+      description: optional process instance status (active, completed, aborted) -
+        defaults ot active (1) only
+    - key: initiator
+      value: string
+      description: optional process instance initiator - user who started process
+        instance to filter process instances
+    - key: processName
+      value: string
+      description: optional process name to filter process instances
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+    - key: sort
+      value: string
+      description: optional sort column, no default
+    - key: sortOrder
+      value: "true"
+      description: optional sort direction (asc, desc) - defaults to asc
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

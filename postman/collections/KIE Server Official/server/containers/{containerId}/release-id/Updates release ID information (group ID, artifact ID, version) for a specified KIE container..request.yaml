@@ -1,0 +1,34 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/release-id?resetBeforeUpdate=false"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+queryParams:
+  - key: resetBeforeUpdate
+    value: "false"
+    description: Determines whether active processes are aborted (reset) before
+      updating when the server runs in development mode
+pathVariables:
+  - key: containerId
+    value: "{{containerId}}"
+    description: Container id that release id should be upgraded
+body:
+  type: json
+  content: "{\r
+
+    \    \"group-id\": \"{{groupId}}\",\r
+
+    \    \"artifact-id\": \"{{artifactId}}\",\r
+
+    \    \"version\": \"{{version}}\"\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+examples: ./.resources/Updates release ID information (group ID, artifact ID,
+  version) for a specified KIE container..resources/examples
+order: 2000

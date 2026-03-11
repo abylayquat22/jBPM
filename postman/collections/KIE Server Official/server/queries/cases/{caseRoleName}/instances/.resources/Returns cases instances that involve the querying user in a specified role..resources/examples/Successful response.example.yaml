@@ -1,0 +1,79 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/cases/:caseRoleName/instances?status=closed&pa\
+    ge=0&pageSize=10&sort=string&sortOrder=true&withData=false"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: status
+      value: closed
+      description: optional case instance status (open, closed, canceled) - defaults
+        ot open (1) only
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+    - key: sort
+      value: string
+      description: optional sort column, no default
+    - key: sortOrder
+      value: "true"
+      description: optional sort direction (asc, desc) - defaults to asc
+    - key: withData
+      value: "false"
+      description: optional flag to load data when loading case instance
+  pathVariables:
+    - key: caseRoleName
+      value: owner
+      description: case role that instances should be found for
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "instances": [
+          {
+            "case-id": "IT-0000000006",
+            "case-description": "Order for IT hardware",
+            "case-owner": "baAdmin",
+            "case-status": 1,
+            "case-definition-id": "itorders.orderhardware",
+            "container-id": "itorders_1.0.0-SNAPSHOT",
+            "case-started-at": 1540474204152,
+            "case-completed-at": null,
+            "case-completion-msg": "",
+            "case-sla-compliance": 0,
+            "case-sla-due-date": null,
+            "case-file": null,
+            "case-milestones": null,
+            "case-stages": null,
+            "case-roles": null
+          },
+          {
+            "case-id": "IT-0000000011",
+            "case-description": "Order for IT hardware",
+            "case-owner": "baAdmin",
+            "case-status": 1,
+            "case-definition-id": "itorders.orderhardware",
+            "container-id": "itorders_1.0.0-SNAPSHOT6",
+            "case-started-at": 1540496734746,
+            "case-completed-at": null,
+            "case-completion-msg": "",
+            "case-sla-compliance": 0,
+            "case-sla-due-date": null,
+            "case-file": null,
+            "case-milestones": null,
+            "case-stages": null,
+            "case-roles": null
+          }
+        ]
+      }
+order: 1000

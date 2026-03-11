@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/release-id?resetBeforeUpdate=f\
+    alse"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  queryParams:
+    - key: resetBeforeUpdate
+      value: "false"
+      description: Determines whether active processes are aborted (reset) before
+        updating when the server runs in development mode
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: Container id that release id should be upgraded
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "response": [
+          {
+            "-type": "SUCCESS",
+            "-msg": "Release id successfully updated.",
+            "release-id": {
+              "artifact-id": "Project1",
+              "group-id": "com.redhat",
+              "version": "1.1"
+            }
+          }
+        ]
+      }
+order: 1000

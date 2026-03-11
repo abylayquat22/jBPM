@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/tasks/errors?errorId=str\
+  ing&errorId=string"
+method: PUT
+queryParams:
+  - key: errorId
+    value: string
+    description: list of identifiers of execution errors to be acknowledged
+  - key: errorId
+    value: string
+    description: list of identifiers of execution errors to be acknowledged
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that errors belong to
+examples: ./.resources/Acknowledges one or more task execution errors in a
+  specified KIE container..resources/examples
+order: 3000

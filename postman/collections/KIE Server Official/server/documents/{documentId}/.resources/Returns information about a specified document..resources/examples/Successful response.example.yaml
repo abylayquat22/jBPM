@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/documents/:documentId"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: documentId
+      value: xxx-yyy-zzz
+      description: document id of a document that should be retruned
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "document-id": "651a7035-3a90-4a25-bffb-bb09ea14fdac",
+        "document-name": "MyDocument",
+        "document-link": "",
+        "document-size": 18,
+        "document-last-mod": {
+          "java.util.Date": 1539936629000
+        },
+        "document-content": "VGhpcyBpcyBhIGRvY3VtZW50"
+      }
+order: 1000

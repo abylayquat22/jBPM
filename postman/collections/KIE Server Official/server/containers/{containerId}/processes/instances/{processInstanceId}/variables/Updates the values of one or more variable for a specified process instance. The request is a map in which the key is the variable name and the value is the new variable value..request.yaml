@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+  stanceId/variables"
+method: POST
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of the process instance to be updated
+body:
+  type: json
+  content: string
+examples: ./.resources/Updates the values of one or more variable for a
+  specified process instance. The request is a map in which the key is the
+  variable name and the value is the new variable value..resources/examples
+order: 3000

@@ -1,0 +1,34 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/cases"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: filter
+    value: string
+    disabled: true
+    description: case definition id or name that case definitions will be filtered by
+  - key: page
+    value: "0"
+    disabled: true
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    disabled: true
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    disabled: true
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    disabled: true
+    description: optional sort direction (asc, desc) - defaults to asc
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+examples: ./.resources/Returns a specified case definition from all KIE
+  containers..resources/examples
+order: 6000

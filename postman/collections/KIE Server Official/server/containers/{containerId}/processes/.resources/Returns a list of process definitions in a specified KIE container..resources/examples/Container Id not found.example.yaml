@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes?page=0&pageSize=10&s\
+    ort=string&sortOrder=true"
+  method: GET
+  queryParams:
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+    - key: sort
+      value: string
+      description: optional sort column, no default
+    - key: sortOrder
+      value: "true"
+      description: optional sort direction (asc, desc) - defaults to asc
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

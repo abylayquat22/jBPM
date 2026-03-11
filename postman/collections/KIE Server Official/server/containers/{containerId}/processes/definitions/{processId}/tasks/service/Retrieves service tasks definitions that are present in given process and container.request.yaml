@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/definitions/:process\
+  Id/tasks/service"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id where the process definition resides
+  - key: processId
+    value: evaluation
+    description: process id that the service task definitions should be retrieved from
+examples: ./.resources/Retrieves service tasks definitions that are present in
+  given process and container.resources/examples
+order: 1000

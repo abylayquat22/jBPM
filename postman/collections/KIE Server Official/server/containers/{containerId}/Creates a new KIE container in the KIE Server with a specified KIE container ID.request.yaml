@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId"
+method: PUT
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: Container id to be assigned to deployed KIE Container
+body:
+  type: json
+  content: string
+examples: ./.resources/Creates a new KIE container in the KIE Server with a
+  specified KIE container ID.resources/examples
+order: 12000

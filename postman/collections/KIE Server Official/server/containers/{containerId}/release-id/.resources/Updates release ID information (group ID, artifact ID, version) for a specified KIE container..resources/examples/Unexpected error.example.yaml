@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/release-id?resetBeforeUpdate=f\
+    alse"
+  method: POST
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: resetBeforeUpdate
+      value: "false"
+      description: Determines whether active processes are aborted (reset) before
+        updating when the server runs in development mode
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: Container id that release id should be upgraded
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

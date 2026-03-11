@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/forms/cases/:caseDefId/content\
+    ?renderer=patternfly"
+  method: GET
+  headers:
+    Accept: text/html
+  queryParams:
+    - key: renderer
+      value: patternfly
+      description: optional renderer name that the form should be rendered with
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case definition belongs to
+    - key: caseDefId
+      value: orderhardware
+      description: identifier of case definition that form should be fetched for
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: text/html
+  body:
+    type: text
+    content: string
+order: 1000

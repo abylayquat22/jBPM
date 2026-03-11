@@ -1,0 +1,33 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/tasks/:taskInstanceId/re\
+  assignments?expiresAt=string&whenNotStarted=false&whenNotCompleted=false"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+queryParams:
+  - key: expiresAt
+    value: string
+    description: time expression for reassignmnet
+  - key: whenNotStarted
+    value: "false"
+    description: optional flag that indicates the type of reassignment, either
+      whenNotStarted or whenNotCompleted must be set
+  - key: whenNotCompleted
+    value: "false"
+    description: optional flag that indicates the type of reassignment, either
+      whenNotStarted or whenNotCompleted must be set
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of task instance to be updated
+body:
+  type: json
+  content: string
+examples: ./.resources/Schedules a specified task instance to be reassigned to
+  specified users or groups and returns the ID of the
+  reassignment..resources/examples
+order: 3000

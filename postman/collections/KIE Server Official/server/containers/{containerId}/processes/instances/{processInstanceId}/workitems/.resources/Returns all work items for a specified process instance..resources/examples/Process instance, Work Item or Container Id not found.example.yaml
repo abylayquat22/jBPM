@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+    stanceId/workitems"
+  method: GET
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of the process instance that work items belong to
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 3000

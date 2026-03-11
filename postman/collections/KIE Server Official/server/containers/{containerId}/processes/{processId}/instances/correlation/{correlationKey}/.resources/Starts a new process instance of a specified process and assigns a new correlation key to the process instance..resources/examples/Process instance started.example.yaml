@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/:processId/instances\
+    /correlation/:correlationKey"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id where the process definition resides
+    - key: processId
+      value: evaluation
+      description: process id that new instance should be created from
+    - key: correlationKey
+      value: john-evaluation-2019
+      description: correlation key to be assigned to process instance
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: "10"
+order: 1000

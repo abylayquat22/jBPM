@@ -1,0 +1,147 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers?groupId=string&artifactId=string&version=st\
+    ring&status=string"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: groupId
+      value: string
+      description: optional groupId to filter containers by
+    - key: artifactId
+      value: string
+      description: optional artifactId to filter containers by
+    - key: version
+      value: string
+      description: optional version to filter containers by
+    - key: status
+      value: string
+      description: optional status to filter containers by
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "response": [
+          {
+            "type": "SUCCESS",
+            "msg": "List of created containers",
+            "result": {
+              "kie-containers": {
+                "kie-container": [
+                  {
+                    "container-id": "MyProjectContainer",
+                    "release-id": {
+                      "group-id": "com.redhat",
+                      "artifact-id": "Project1",
+                      "version": "1.0"
+                    },
+                    "resolved-release-id": {
+                      "group-id": "com.redhat",
+                      "artifact-id": "Project1",
+                      "version": "1.0"
+                    },
+                    "status": "STARTED",
+                    "scanner": {
+                      "status": "DISPOSED",
+                      "poll-interval": null
+                    },
+                    "config-items": [
+                      {
+                        "itemName": "KBase",
+                        "itemValue": "",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "KSession",
+                        "itemValue": "",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "MergeMode",
+                        "itemValue": "MERGE_COLLECTIONS",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "RuntimeStrategy",
+                        "itemValue": "SINGLETON",
+                        "itemType": "BPM"
+                      }
+                    ],
+                    "messages": [
+                      {
+                        "severity": "INFO",
+                        "timestamp": {
+                          "java.util.Date": 1538996205681
+                        },
+                        "content": [
+                          "Container MyProjectContainer successfully created with module com.redhat:Project1:1.0."
+                        ]
+                      }
+                    ],
+                    "container-alias": "MyProjectContainer"
+                  },
+                  {
+                    "container-id": "employe-rostering",
+                    "release-id": {
+                      "group-id": "employeerostering",
+                      "artifact-id": "employeerostering",
+                      "version": "1.0.0-SNAPSHOT"
+                    },
+                    "resolved-release-id": {
+                      "group-id": "employeerostering",
+                      "artifact-id": "employeerostering",
+                      "version": "1.0.0-SNAPSHOT"
+                    },
+                    "status": "STARTED",
+                    "scanner": {
+                      "status": "DISPOSED",
+                      "poll-interval": null
+                    },
+                    "config-items": [
+                      {
+                        "itemName": "KBase",
+                        "itemValue": "",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "KSession",
+                        "itemValue": "",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "MergeMode",
+                        "itemValue": "MERGE_COLLECTIONS",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "RuntimeStrategy",
+                        "itemValue": "SINGLETON",
+                        "itemType": "BPM"
+                      }
+                    ],
+                    "messages": [
+                      {
+                        "severity": "INFO",
+                        "timestamp": {
+                          "java.util.Date": 1539029260330
+                        },
+                        "content": [
+                          "Container employee-rostering successfully created with module employeerostering:employeerostering:1.0.0-SNAPSHOT."
+                        ]
+                      }
+                    ],
+                    "container-alias": "employeerostering"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+order: 1000

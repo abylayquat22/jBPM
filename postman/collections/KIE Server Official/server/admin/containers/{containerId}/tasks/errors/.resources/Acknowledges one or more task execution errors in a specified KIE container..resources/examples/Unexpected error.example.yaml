@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/tasks/errors?errorId=str\
+    ing"
+  method: PUT
+  queryParams:
+    - key: errorId
+      value: string
+      description: list of identifiers of execution errors to be acknowledged
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that errors belong to
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

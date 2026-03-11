@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/processes/instances/:processInstanceId?withVar\
+  s=true"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: withVars
+    value: "true"
+    description: load process instance variables or not, defaults to false
+pathVariables:
+  - key: processInstanceId
+    value: "{{processInstanceId}}"
+    description: process instance id to retrieve process instance
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+examples: ./.resources/Returns information about a specified process
+  instance..resources/examples
+order: 4000

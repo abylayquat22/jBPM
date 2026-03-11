@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/definitions/:queryName"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  pathVariables:
+    - key: queryName
+      value: customQuery
+      description: identifier of the query definition to be registered
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "query-name": "jbpmProcessInstancesWithVariables1",
+        "query-source": "java:jboss/datasources/ExampleDS",
+        "query-expression": "select vil.processInstanceId, vil.processId, vil.id, vil.variableId, vil.value from VariableInstanceLog vil where vil.id in (select MAX(v.id) from VariableInstanceLog v group by v.variableId, v.processInstanceId)",
+        "query-target": "CUSTOM",
+        "query-columns": {
+          "PROCESSINSTANCEID": "NUMBER",
+          "VARIABLEID": "LABEL",
+          "ID": "NUMBER",
+          "VALUE": "LABEL",
+          "PROCESSID": "LABEL"
+        }
+      }
+order: 1000

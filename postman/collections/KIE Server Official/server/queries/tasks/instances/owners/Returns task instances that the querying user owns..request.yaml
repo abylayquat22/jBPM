@@ -1,0 +1,34 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/tasks/instances/owners?status=Suspended&status\
+  =Exited&user=string&page=0&pageSize=10&sort=string&sortOrder=true"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: status
+    value: Suspended
+    description: optional task status (Created, Ready, Reserved, InProgress,
+      Suspended, Completed, Failed, Error, Exited, Obsolete)
+  - key: status
+    value: Exited
+    description: optional task status (Created, Ready, Reserved, InProgress,
+      Suspended, Completed, Failed, Error, Exited, Obsolete)
+  - key: user
+    value: string
+    description: optional user id to be used instead of authenticated user - only
+      when bypass authenticated user is enabled
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    description: optional sort direction (asc, desc) - defaults to asc
+examples: ./.resources/Returns task instances that the querying user
+  owns..resources/examples
+order: 1000

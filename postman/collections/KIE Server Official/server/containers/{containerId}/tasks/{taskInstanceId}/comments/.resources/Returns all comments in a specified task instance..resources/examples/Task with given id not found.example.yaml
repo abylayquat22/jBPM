@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/comments"
+  method: GET
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of the task instance that comments should be loaded for
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

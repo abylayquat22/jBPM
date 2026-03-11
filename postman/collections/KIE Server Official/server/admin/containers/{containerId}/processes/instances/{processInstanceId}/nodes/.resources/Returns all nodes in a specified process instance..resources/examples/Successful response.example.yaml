@@ -1,0 +1,112 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+    cessInstanceId/nodes"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of process instance that process nodes should be
+        collected from
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "process-node": [
+          {
+            "name": "",
+            "id": 1,
+            "type": "StartNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "",
+            "id": 2,
+            "type": "Join",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "Validation",
+            "id": 3,
+            "type": "RuleSetNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "",
+            "id": 4,
+            "type": "Split",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "Retract Validation",
+            "id": 5,
+            "type": "RuleSetNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "Correct Data",
+            "id": 6,
+            "type": "HumanTaskNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "Mortgage Calculation",
+            "id": 7,
+            "type": "RuleSetNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "Qualify",
+            "id": 8,
+            "type": "HumanTaskNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "",
+            "id": 9,
+            "type": "Split",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "Final Approval",
+            "id": 10,
+            "type": "HumanTaskNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "",
+            "id": 11,
+            "type": "EndNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "Increase Down Payment",
+            "id": 12,
+            "type": "HumanTaskNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "",
+            "id": 13,
+            "type": "Split",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          },
+          {
+            "name": "",
+            "id": 14,
+            "type": "EndNode",
+            "process-id": "Mortgage_Process.MortgageApprovalProcess"
+          }
+        ]
+      }
+order: 1000

@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/scanner"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: Container id for scanner to be loaded
+examples: ./.resources/Returns information about the KIE scanner used for
+  automatic updates in a specified KIE container, if
+  applicable..resources/examples
+order: 1000

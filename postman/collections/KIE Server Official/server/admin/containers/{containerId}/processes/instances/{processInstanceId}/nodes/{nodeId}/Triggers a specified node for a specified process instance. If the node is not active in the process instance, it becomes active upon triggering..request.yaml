@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+  cessInstanceId/nodes/:nodeId"
+method: POST
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of process instance where node should be triggered
+  - key: nodeId
+    value: "567"
+    description: identifier of the node to be triggered
+examples: ./.resources/Triggers a specified node for a specified process
+  instance. If the node is not active in the process instance, it becomes active
+  upon triggering..resources/examples
+order: 1000

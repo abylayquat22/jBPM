@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/server"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+examples: ./.resources/Returns information about the KIE Server. The endpoint
+  for this request is the base URL for the REST API..resources/examples
+order: 11000

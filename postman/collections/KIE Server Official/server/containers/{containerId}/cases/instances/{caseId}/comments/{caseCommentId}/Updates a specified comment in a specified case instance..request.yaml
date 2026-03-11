@@ -1,0 +1,33 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId/commen\
+  ts/:caseCommentId?author=string&restrictedTo=string&restrictedTo=string"
+method: PUT
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: author
+    value: string
+    description: optional user id to be used instead of authenticated user - only
+      when bypass authenticated user is enabled
+  - key: restrictedTo
+    value: string
+    description: optional role name(s) that given comment should be restricted to
+  - key: restrictedTo
+    value: string
+    description: optional role name(s) that given comment should be restricted to
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that case instance belongs to
+  - key: caseId
+    value: CASE-00000000001
+    description: identifier of the case instance
+  - key: caseCommentId
+    value: xxx-yyy-zzz
+    description: identifier of the comment to be updated
+body:
+  type: json
+  content: string
+examples: ./.resources/Updates a specified comment in a specified case
+  instance..resources/examples
+order: 1000

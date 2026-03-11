@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/attachme\
+  nts/:attachmentId"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of the task instance that attachment belongs to
+  - key: attachmentId
+    value: "567"
+    description: identifier of the attachment to be loaded
+examples: ./.resources/Returns information about a specified attachment for a
+  specified task instance..resources/examples
+order: 2000

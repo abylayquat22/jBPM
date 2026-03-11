@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/solvers"
+  method: GET
+  headers:
+    Accept: application/xml
+  pathVariables:
+    - key: containerId
+      value: string
+      description: container id where the solvers reside
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "solver": [
+          {
+            "container-id": "string",
+            "solver-id": "string",
+            "solver-config-file": "string",
+            "status": "TERMINATING_EARLY",
+            "score": {
+              "value": "string"
+            },
+            "best-solution": {}
+          },
+          {
+            "container-id": "string",
+            "solver-id": "string",
+            "solver-config-file": "string",
+            "status": "SOLVING",
+            "score": {
+              "value": "string"
+            },
+            "best-solution": {}
+          }
+        ]
+      }
+order: 1000

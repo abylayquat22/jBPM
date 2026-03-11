@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/processes/instances/:processInstanceId?withVar\
+    s=true"
+  method: GET
+  queryParams:
+    - key: withVars
+      value: "true"
+      description: load process instance variables or not, defaults to false
+  pathVariables:
+    - key: processInstanceId
+      value: "3284"
+      description: process instance id to retrieve process instance
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

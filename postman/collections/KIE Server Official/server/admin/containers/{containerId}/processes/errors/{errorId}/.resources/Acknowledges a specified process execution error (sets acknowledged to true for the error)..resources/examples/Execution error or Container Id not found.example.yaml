@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/errors/:errorId"
+  method: PUT
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that error belongs to
+    - key: errorId
+      value: xxx-yyy-zzz
+      description: identifier of error to be acknowledged
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 1000

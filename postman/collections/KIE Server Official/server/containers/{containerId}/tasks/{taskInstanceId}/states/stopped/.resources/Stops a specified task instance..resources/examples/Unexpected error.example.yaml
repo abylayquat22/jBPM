@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/states/s\
+    topped?user=string"
+  method: PUT
+  queryParams:
+    - key: user
+      value: string
+      description: optional user id to be used instead of authenticated user - only
+        when bypass authenticated user is enabled
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of the task instance that should be stopped
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

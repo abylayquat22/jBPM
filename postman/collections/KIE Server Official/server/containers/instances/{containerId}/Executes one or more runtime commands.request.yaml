@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/instances/:containerId"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/xml
+pathVariables:
+  - key: containerId
+    value: string
+    description: Container id where rules should be evaluated on
+body:
+  type: json
+  content: string
+examples: ./.resources/Executes one or more runtime commands.resources/examples
+order: 1000

@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances?instanceId\
+  =2813&instanceId=5240"
+method: DELETE
+queryParams:
+  - key: instanceId
+    value: "2813"
+    description: list of identifiers of the process instances to be aborted
+  - key: instanceId
+    value: "5240"
+    description: list of identifiers of the process instances to be aborted
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+examples: ./.resources/Aborts multiple specified process instances in a
+  specified KIE container..resources/examples
+order: 5000

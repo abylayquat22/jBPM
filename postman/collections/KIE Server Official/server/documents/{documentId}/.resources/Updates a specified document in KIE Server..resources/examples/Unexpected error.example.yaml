@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/documents/:documentId"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: documentId
+      value: xxx-yyy-zzz
+      description: document id of a document that should be updated
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

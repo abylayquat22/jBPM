@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/definitions/:queryName"
+  method: GET
+  pathVariables:
+    - key: queryName
+      value: customQuery
+      description: identifier of the query definition to be retrieved
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,73 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/cases/instances/:caseId?\
+    targetContainerId=string"
+  method: PUT
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  queryParams:
+    - key: targetContainerId
+      value: string
+      description: container id that new case definition should be migrated to to
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case instance belongs to
+    - key: caseId
+      value: CASE-000000001
+      description: identifier of case instance to be migrated
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "case-id": "IT-0000000006",
+        "case-migration-successful": true,
+        "case-migration-start": {
+          "java.util.Date": 1540526940760
+        },
+        "case-migration-end": {
+          "java.util.Date": 1540526940867
+        },
+        "case-migration-reports": [
+          {
+            "migration-successful": true,
+            "migration-start": {
+              "java.util.Date": 1540526940760
+            },
+            "migration-end": {
+              "java.util.Date": 1540526940863
+            },
+            "migration-logs": [
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Variable instances updated = 2 for process instance id 27",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Node instances updated = 4 for process instance id 27",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Process instances updated = 1 for process instance id 27",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Task variables updated = 6 for process instance id 27",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Task audit updated = 1 for process instance id 27",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Tasks updated = 1 for process instance id 27",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Context info updated = 1 for process instance id 27",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs to be updated  = [0]",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs updated = 1 for node instance id 0",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Task audit updated = 1 for task id 33",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Task updated = 1 for task id 33",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs to be updated  = [1]",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs updated = 1 for node instance id 1",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs to be updated  = [2]",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs updated = 1 for node instance id 2",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs to be updated  = [3]",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Mapping: Node instance logs updated = 1 for node instance id 3",
+              "INFO Fri Oct 26 00:09:00 EDT 2018 Migration of process instance (27) completed successfully to process itorders.orderhardware2"
+            ],
+            "migration-process-instance": 27
+          }
+        ]
+      }
+order: 1000

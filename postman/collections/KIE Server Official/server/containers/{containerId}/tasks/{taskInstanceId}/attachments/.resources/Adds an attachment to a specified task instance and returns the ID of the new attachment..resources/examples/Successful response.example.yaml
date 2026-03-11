@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/attachme\
+    nts?user=string&name=string"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  queryParams:
+    - key: user
+      value: string
+      description: optional user id to be used instead of authenticated user - only
+        when bypass authenticated user is enabled
+    - key: name
+      value: string
+      description: name of the attachment to be added
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of the task instance that attachment should be added to
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: "10"
+order: 1000

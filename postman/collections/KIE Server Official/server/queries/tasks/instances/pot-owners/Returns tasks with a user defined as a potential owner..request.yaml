@@ -1,0 +1,44 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/tasks/instances/pot-owners?status=Suspended&st\
+  atus=Exited&groups=string&groups=string&user=string&page=0&pageSize=10&sort=s\
+  tring&sortOrder=true&filter=string"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: status
+    value: Suspended
+    description: optional task status (Created, Ready, Reserved, InProgress,
+      Suspended, Completed, Failed, Error, Exited, Obsolete)
+  - key: status
+    value: Exited
+    description: optional task status (Created, Ready, Reserved, InProgress,
+      Suspended, Completed, Failed, Error, Exited, Obsolete)
+  - key: groups
+    value: string
+    description: optional group names to include in the query
+  - key: groups
+    value: string
+    description: optional group names to include in the query
+  - key: user
+    value: string
+    description: optional user id to be used instead of authenticated user - only
+      when bypass authenticated user is enabled
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    description: optional sort direction (asc, desc) - defaults to asc
+  - key: filter
+    value: string
+    description: optional custom filter for task data
+examples: ./.resources/Returns tasks with a user defined as a potential
+  owner..resources/examples
+order: 1000

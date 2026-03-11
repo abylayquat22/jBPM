@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/server/documents/:documentId"
+method: PUT
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: documentId
+    value: xxx-yyy-zzz
+    description: document id of a document that should be updated
+body:
+  type: json
+  content: string
+examples: ./.resources/Updates a specified document in KIE Server..resources/examples
+order: 3000

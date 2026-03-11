@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{baseUrl}}/server/readycheck"
+method: GET
+examples: ./.resources/Readiness check for KIE Server that indicates that server
+  is fully booted and ready to accept requests.resources/examples
+order: 1000

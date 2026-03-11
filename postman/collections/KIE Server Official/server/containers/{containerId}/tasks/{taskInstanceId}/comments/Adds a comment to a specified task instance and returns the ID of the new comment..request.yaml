@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/comments"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of the task instance that comment should be added to
+body:
+  type: json
+  content: string
+examples: ./.resources/Adds a comment to a specified task instance and returns
+  the ID of the new comment..resources/examples
+order: 3000

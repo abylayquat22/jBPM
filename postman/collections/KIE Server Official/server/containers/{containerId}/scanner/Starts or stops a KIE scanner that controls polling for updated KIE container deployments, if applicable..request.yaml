@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/scanner"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: Container id for scanner to be updated
+body:
+  type: json
+  content: string
+examples: ./.resources/Starts or stops a KIE scanner that controls polling for
+  updated KIE container deployments, if applicable..resources/examples
+order: 2000

@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+  cessInstanceId/nodes"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of process instance that process nodes should be collected from
+examples: ./.resources/Returns all nodes in a specified process
+  instance..resources/examples
+order: 2000

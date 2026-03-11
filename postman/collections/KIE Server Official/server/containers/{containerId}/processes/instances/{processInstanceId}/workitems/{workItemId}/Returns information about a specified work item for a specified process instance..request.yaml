@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+  stanceId/workitems/:workItemId"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of the process instance that work item belongs to
+  - key: workItemId
+    value: "567"
+    description: identifier of the work item to retrieve
+examples: ./.resources/Returns information about a specified work item for a
+  specified process instance..resources/examples
+order: 3000

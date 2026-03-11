@@ -1,0 +1,34 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/forms/processes/:processId?lan\
+    g=en&filter=true&type=ANY&marshallContent=true"
+  method: GET
+  queryParams:
+    - key: lang
+      value: en
+      description: optional language that the form should be found for
+    - key: filter
+      value: "true"
+      description: optional filter flag if form should be filtered or returned as is
+    - key: type
+      value: ANY
+      description: optional type of the form, defaults to ANY so system will find the
+        most current one
+    - key: marshallContent
+      value: "true"
+      description: optional marshall content flag if the content should be transformed
+        or not, defaults to true
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process definition belongs to
+    - key: processId
+      value: evaluation
+      description: identifier of process definition that form should be fetched for
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 3000

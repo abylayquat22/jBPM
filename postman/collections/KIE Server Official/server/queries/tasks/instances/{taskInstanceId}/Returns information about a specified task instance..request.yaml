@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/tasks/instances/:taskInstanceId?withSLA=false"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: withSLA
+    value: "false"
+    description: optional include SLA data - defaults to false
+pathVariables:
+  - key: taskInstanceId
+    value: "3284"
+    description: task id to load task instance
+examples: ./.resources/Returns information about a specified task
+  instance..resources/examples
+order: 2000

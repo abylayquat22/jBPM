@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/dmn/models/:modelId/:decisionS\
+    erviceId"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: containerId
+      value: string
+      description: Container id to be used to evaluate decisions on
+    - key: modelId
+      value: string
+      description: Reference container-specific Swagger/OAS definitions
+    - key: decisionServiceId
+      value: string
+      description: Reference container-specific Swagger/OAS definitions
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

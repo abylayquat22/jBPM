@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/processes/errors/:errorId"
+method: PUT
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that error belongs to
+  - key: errorId
+    value: xxx-yyy-zzz
+    description: identifier of error to be acknowledged
+examples: ./.resources/Acknowledges a specified process execution error (sets
+  acknowledged to true for the error)..resources/examples
+order: 2000

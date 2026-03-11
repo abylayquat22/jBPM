@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{baseUrl}}/server/jobs/processes/instances/:processInstanceId?status=RET\
+  RYING&status=QUEUED&page=0&pageSize=10"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: status
+    value: RETRYING
+    description: optional job status (QUEUED, DONE, CANCELLED, ERROR, RETRYING, RUNNING)
+  - key: status
+    value: QUEUED
+    description: optional job status (QUEUED, DONE, CANCELLED, ERROR, RETRYING, RUNNING)
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+pathVariables:
+  - key: processInstanceId
+    value: "123"
+    description: identifier of the process instance that asynchornous jobs should be
+      found for
+examples: ./.resources/Returns jobs for specified process instance..resources/examples
+order: 1000

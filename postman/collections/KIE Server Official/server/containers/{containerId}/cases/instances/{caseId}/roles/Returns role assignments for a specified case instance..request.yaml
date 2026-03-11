@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId/roles"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that case instance belongs to
+  - key: caseId
+    value: CASE-00000000001
+    description: identifier of the case instance
+examples: ./.resources/Returns role assignments for a specified case
+  instance..resources/examples
+order: 2000

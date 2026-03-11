@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/cases/instances/:caseId/caseFile?name=string&t\
+    ype=string&page=0&pageSize=10"
+  method: GET
+  queryParams:
+    - key: name
+      value: string
+      description: optionally filter by data item names
+    - key: type
+      value: string
+      description: optionally filter by data item types
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+  pathVariables:
+    - key: caseId
+      value: CASE-0000000001
+      description: case instance identifier that data items should belong to
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

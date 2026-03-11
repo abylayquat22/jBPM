@@ -1,0 +1,26 @@
+$kind: http-request
+description: 'This is a techincal endpoint not directly documented here; this
+  endpoint instead is documented in another Swagger/OAS definitions. Please
+  reference container-specific generated Swagger/OAS definitions, as described
+  in the documentation (doc ref: "REST endpoints for specific DMN models", req
+  refs: BAPL-1787, DROOLS-6047).'
+url: "{{baseUrl}}/server/containers/:containerId/dmn/models/:modelId/:decisionS\
+  erviceId"
+method: POST
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: containerId
+    value: string
+    description: Container id to be used to evaluate decisions on
+  - key: modelId
+    value: string
+    description: Reference container-specific Swagger/OAS definitions
+  - key: decisionServiceId
+    value: string
+    description: Reference container-specific Swagger/OAS definitions
+body:
+  type: json
+  content: string
+examples: ./.resources/Model-specific DMN evaluation.resources/examples
+order: 2000

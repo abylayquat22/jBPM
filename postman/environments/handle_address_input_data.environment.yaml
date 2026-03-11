@@ -1,0 +1,52 @@
+name: handle_address_input_data
+values:
+  - key: username
+    value: abylay_63947
+    enabled: true
+  - key: password
+    value: ""
+    enabled: true
+  - key: base_url
+    value: ""
+    enabled: true
+    description: BusinessCentral url
+  - key: branch
+    value: test
+    enabled: true
+  - key: space
+    value: RDM
+    enabled: true
+  - key: project
+    value: handle-address-input-data
+    enabled: true
+  - key: groupId
+    value: kz.kaspi.jbpm.rdm.projects
+    enabled: true
+  - key: artifactId
+    value: handle-address-input-data
+    enabled: true
+  - key: version
+    value: 2.0.0-SNAPSHOT
+    enabled: true
+  - key: processId
+    value: handle_address_input_data_process
+    enabled: true
+  - key: containerId
+    value: handle-address-input-data-2.0.0-SNAPSHOT
+    enabled: true
+  - key: inp_body
+    value: ""
+    enabled: true
+  - key: inp_body_string
+    value: ""
+    enabled: true
+    description: заполняется автоматически
+  - key: deployJobId
+    value: ""
+    enabled: true
+    description: заполняется автоматически
+  - key: processInstanceId
+    value: ""
+    enabled: true
+    description: заполняется автоматически
+color: 120

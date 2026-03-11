@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId/roles/\
+  :caseRoleName?user=string&group=string"
+method: PUT
+queryParams:
+  - key: user
+    value: string
+    description: user to be aded to case role for given case instance
+  - key: group
+    value: string
+    description: group to be aded to case role for given case instance
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that case instance belongs to
+  - key: caseId
+    value: CASE-00000000001
+    description: identifier of the case instance
+  - key: caseRoleName
+    value: owner
+    description: name of the case role the assignment should be set
+examples: ./.resources/Assigns a specified case role to a specified user and
+  group for a specified case instance..resources/examples
+order: 1000

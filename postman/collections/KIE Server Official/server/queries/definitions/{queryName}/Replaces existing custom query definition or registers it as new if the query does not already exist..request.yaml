@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/definitions/:queryName"
+method: PUT
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: queryName
+    value: customQuery
+    description: identifier of the query definition to be replaced
+body:
+  type: json
+  content: string
+examples: ./.resources/Replaces existing custom query definition or registers it
+  as new if the query does not already exist..resources/examples
+order: 5000

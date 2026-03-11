@@ -1,0 +1,80 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId?withDa\
+    ta=false&withRoles=false&withMilestones=false&withStages=false"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: withData
+      value: "false"
+      description: optional flag to load data when loading case instance
+    - key: withRoles
+      value: "false"
+      description: optional flag to load roles when loading case instance
+    - key: withMilestones
+      value: "false"
+      description: optional flag to load milestones when loading case instance
+    - key: withStages
+      value: "false"
+      description: optional flag to load stages when loading case instance
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case instance belongs to
+    - key: caseId
+      value: CASE-00000000001
+      description: identifier of the case instance
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "case-id": "IT-0000000006",
+        "case-description": "Order for IT hardware",
+        "case-owner": "baAdmin",
+        "case-status": 1,
+        "case-definition-id": "itorders.orderhardware",
+        "container-id": "itorders_1.0.0-SNAPSHOT",
+        "case-started-at": 1540474204152,
+        "case-completed-at": null,
+        "case-completion-msg": "",
+        "case-sla-compliance": 0,
+        "case-sla-due-date": null,
+        "case-file": {
+          "case-data": {},
+          "case-user-assignments": {},
+          "case-group-assignments": {},
+          "case-data-restrictions": {}
+        },
+        "case-milestones": null,
+        "case-stages": null,
+        "case-roles": [
+          {
+            "name": "owner",
+            "users": [
+              "baAdmin"
+            ],
+            "groups": []
+          },
+          {
+            "name": "manager",
+            "users": [
+              "baAdmin"
+            ],
+            "groups": []
+          },
+          {
+            "name": "supplier",
+            "users": [],
+            "groups": [
+              "IT"
+            ]
+          }
+        ]
+      }
+order: 1000

@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/forms/tasks/:taskInstanceId/co\
+    ntent?renderer=patternfly"
+  method: GET
+  queryParams:
+    - key: renderer
+      value: patternfly
+      description: optional renderer name that the form should be rendered with
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of task instance that form should be fetched for
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

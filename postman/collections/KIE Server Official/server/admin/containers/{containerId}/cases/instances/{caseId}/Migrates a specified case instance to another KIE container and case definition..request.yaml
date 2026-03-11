@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/cases/instances/:caseId?\
+  targetContainerId=string"
+method: PUT
+headers:
+  Content-Type: application/json
+  Accept: application/json
+queryParams:
+  - key: targetContainerId
+    value: string
+    description: container id that new case definition should be migrated to to
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that case instance belongs to
+  - key: caseId
+    value: CASE-000000001
+    description: identifier of case instance to be migrated
+body:
+  type: json
+  content: string
+examples: ./.resources/Migrates a specified case instance to another KIE
+  container and case definition..resources/examples
+order: 1000

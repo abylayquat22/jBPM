@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/states/claimed?taskId=ta\
+    skId=1%26taskId=2%26taskId=3&user=string"
+  method: POST
+  queryParams:
+    - key: taskId
+      value: taskId=1&taskId=2&taskId=3
+      description: identifiers of the task instances that should be claimed
+    - key: user
+      value: string
+      description: optional user id to be used instead of authenticated user - only
+        when bypass authenticated user is enabled
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

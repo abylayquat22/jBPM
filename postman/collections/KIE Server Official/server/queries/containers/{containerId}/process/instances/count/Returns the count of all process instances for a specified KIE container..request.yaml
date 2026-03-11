@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/containers/:containerId/process/instances/coun\
+  t?status=3&status=3"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: status
+    value: "3"
+    description: optional process instance status (active, completed, aborted) -
+      defaults ot active (1) only
+  - key: status
+    value: "3"
+    description: optional process instance status (active, completed, aborted) -
+      defaults ot active (1) only
+pathVariables:
+  - key: containerId
+    value: string
+    description: container id to filter process instance
+examples: ./.resources/Returns the count of all process instances for a
+  specified KIE container..resources/examples
+order: 1000

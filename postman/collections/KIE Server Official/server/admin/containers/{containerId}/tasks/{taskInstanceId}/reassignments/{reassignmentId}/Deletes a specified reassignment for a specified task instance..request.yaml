@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/tasks/:taskInstanceId/re\
+  assignments/:reassignmentId"
+method: DELETE
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that task instance belongs to
+  - key: taskInstanceId
+    value: "123"
+    description: identifier of task instance to be updated
+  - key: reassignmentId
+    value: "567"
+    description: identifier of reassignment to be canceled
+examples: ./.resources/Deletes a specified reassignment for a specified task
+  instance..resources/examples
+order: 1000

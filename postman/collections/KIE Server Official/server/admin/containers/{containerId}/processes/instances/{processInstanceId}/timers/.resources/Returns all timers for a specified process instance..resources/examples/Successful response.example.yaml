@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+    cessInstanceId/timers"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of process instance that timer instances should be
+        collected for
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "timer-instance": [
+          {
+            "name": "MyTimer",
+            "id": 1,
+            "activation-time": "2018-10-18T04:49:28.907Z",
+            "last-fire-time": "2018-10-18T04:49:28.907Z",
+            "next-fire-time": "2018-10-18T04:49:28.907Z",
+            "delay": 35000,
+            "period": 500000,
+            "repeat-limit": 2,
+            "process-instance-id": 6,
+            "session-id": 9
+          }
+        ]
+      }
+order: 1000

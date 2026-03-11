@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/solvers/:solverId/bestsolution"
+  method: GET
+  pathVariables:
+    - key: containerId
+      value: string
+      description: container id where the solver resides
+    - key: solverId
+      value: string
+      description: identifier of the solver
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 3000

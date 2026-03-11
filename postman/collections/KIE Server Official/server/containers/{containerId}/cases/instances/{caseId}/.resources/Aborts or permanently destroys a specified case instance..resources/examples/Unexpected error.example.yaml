@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId?destro\
+    y=false"
+  method: DELETE
+  queryParams:
+    - key: destroy
+      value: "false"
+      description: allows to destroy (permanently) case instance as part of the cancel
+        operation, defaults to false
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case instance belongs to
+    - key: caseId
+      value: CASE-00000000001
+      description: identifier of the case instance
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

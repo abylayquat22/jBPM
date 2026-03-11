@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseUrl}}/server/documents/:documentId/content"
+method: GET
+headers:
+  Accept: application/octet-stream
+pathVariables:
+  - key: documentId
+    value: xxx-yyy-zzz
+    description: document id of a document that content should be retruned from
+examples: ./.resources/Retrieves document's content identified by given
+  documentId.resources/examples
+order: 1000

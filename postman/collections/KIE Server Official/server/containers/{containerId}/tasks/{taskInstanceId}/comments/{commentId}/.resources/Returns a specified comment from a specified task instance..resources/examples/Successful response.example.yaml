@@ -1,0 +1,34 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/comments\
+    /:commentId"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of the task instance that comment belongs to
+    - key: commentId
+      value: "567"
+      description: identifier of the comment to be loaded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "comment-id": null,
+        "comment": "First comment.",
+        "comment-added-by": "yoda",
+        "comment-added-at": {
+          "java.util.Date": 1539939094774
+        }
+      }
+order: 1000

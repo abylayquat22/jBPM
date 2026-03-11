@@ -1,0 +1,46 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+    stanceId/variables/instances"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of the process instance that variables state should be
+        collected for
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "variable-instance": [
+          {
+            "name": "initiator",
+            "old-value": "",
+            "value": "baAdmin",
+            "process-instance-id": 2,
+            "modification-date": {
+              "java.util.Date": 1539610491992
+            }
+          },
+          {
+            "name": "application",
+            "old-value": "com.myspace.mortgage_app.Application@bd449b3",
+            "value": "com.myspace.mortgage_app.Application@bd449b3",
+            "process-instance-id": 2,
+            "modification-date": {
+              "java.util.Date": 1539610492006
+            }
+          }
+        ]
+      }
+order: 1000

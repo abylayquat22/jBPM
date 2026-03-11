@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+  cessInstanceId?targetContainerId=string&targetProcessId=string"
+method: PUT
+headers:
+  Content-Type: application/json
+  Accept: application/json
+queryParams:
+  - key: targetContainerId
+    value: string
+    description: container id that new process definition belongs to
+  - key: targetProcessId
+    value: string
+    description: process definition that process instance should be migrated to
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of process instance to be migrated
+body:
+  type: json
+  content: string
+examples: ./.resources/Migrates a specified process instance to a process
+  definition in another KIE container..resources/examples
+order: 6000

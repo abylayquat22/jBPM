@@ -1,0 +1,49 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/tasks/:taskInstanceId/attachme\
+    nts"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that task instance belongs to
+    - key: taskInstanceId
+      value: "123"
+      description: identifier of the task instance that attachments should be loaded for
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "task-attachment": [
+          {
+            "attachment-id": 1,
+            "attachment-name": "Task Attachment",
+            "attachment-added-by": "baAdmin",
+            "attachment-added-at": {
+              "java.util.Date": 1540229715779
+            },
+            "attachment-type": "java.util.LinkedHashMap",
+            "attachment-size": 233,
+            "attachment-content-id": 31
+          },
+          {
+            "attachment-id": 2,
+            "attachment-name": "Task Attachment 2",
+            "attachment-added-by": "baAdmin",
+            "attachment-added-at": {
+              "java.util.Date": 1540229715780
+            },
+            "attachment-type": "java.util.LinkedHashMap",
+            "attachment-size": 300,
+            "attachment-content-id": 32
+          }
+        ]
+      }
+order: 1000

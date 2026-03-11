@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/status/deactivated"
+method: PUT
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: Container id of deployed KIE Container
+examples: ./.resources/Deactivates (previously started) KIE container on this
+  server.resources/examples
+order: 1000

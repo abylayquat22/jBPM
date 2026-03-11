@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/containers/:containerId/processes/definitions/\
+  :processId"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: string
+    description: container id that process definition belongs to
+  - key: processId
+    value: string
+    description: process id to load process definition
+examples: ./.resources/Returns information about a specified process definition
+  in a specified KIE container..resources/examples
+order: 1000

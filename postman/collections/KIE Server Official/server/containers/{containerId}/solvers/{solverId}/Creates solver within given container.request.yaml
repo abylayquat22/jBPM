@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/solvers/:solverId"
+method: PUT
+headers:
+  Content-Type: application/json
+  Accept: application/xml
+pathVariables:
+  - key: containerId
+    value: string
+    description: container id where the solver config resides
+  - key: solverId
+    value: string
+    description: identifier of the solver to create
+body:
+  type: json
+  content: string
+examples: ./.resources/Creates solver within given container.resources/examples
+order: 5000

@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/definitions/:queryName"
+  method: GET
+  pathVariables:
+    - key: queryName
+      value: customQuery
+      description: identifier of the query definition to be retrieved
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 3000

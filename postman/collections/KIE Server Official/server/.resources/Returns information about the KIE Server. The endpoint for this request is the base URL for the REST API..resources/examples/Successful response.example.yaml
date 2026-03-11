@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server"
+  method: GET
+  headers:
+    Accept: application/json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "response": [
+          {
+            "type": "SUCCESS",
+            "msg": "Kie Server info",
+            "result": {
+              "kie-server-info": {
+                "id": "default-kieserver",
+                "version": "7.11.0.Final-redhat-00001",
+                "name": "default-kieserver",
+                "location": "http://localhost:8080/kie-server/services/rest/server",
+                "capabilities": [
+                  "KieServer",
+                  "BRM",
+                  "BPM",
+                  "CaseMgmt",
+                  "BPM-UI",
+                  "BRP",
+                  "DMN",
+                  "Swagger"
+                ],
+                "messages": [
+                  {
+                    "severity": "INFO",
+                    "timestamp": {
+                      "java.util.Date": 1538996199184
+                    },
+                    "content": [
+                      "Server KieServerInfo{serverId='default-kieserver', version='7.11.0.Final-redhat-00001', name='default-kieserver', location='http://localhost:8080/kie-server/services/rest/server', capabilities=[KieServer, BRM, BPM, CaseMgmt, BPM-UI, BRP, DMN, Swagger], messages=null}started successfully at Mon Oct 08 06:56:39 EDT 2018"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+order: 1000

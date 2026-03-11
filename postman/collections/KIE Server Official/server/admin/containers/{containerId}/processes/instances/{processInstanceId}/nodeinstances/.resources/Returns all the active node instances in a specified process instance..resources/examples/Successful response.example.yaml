@@ -1,0 +1,45 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
+    cessInstanceId/nodeinstances"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: processInstanceId
+      value: "123"
+      description: identifier of process instance that active nodes instances should
+        be collected for
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "node-instance": [
+          {
+            "node-instance-id": 1,
+            "node-name": "Task",
+            "process-instance-id": 2,
+            "work-item-id": 2,
+            "container-id": "employee-rostering",
+            "start-date": {
+              "java.util.Date": 1539184095048
+            },
+            "node-id": "_5F8EED98-433C-4E7B-97BC-0E70615F13CB",
+            "node-type": "HumanTaskNode",
+            "node-connection": "_E89FEB0F-B8E1-4138-9DF0-397C9F9A6512",
+            "node-completed": false,
+            "reference-id": null,
+            "sla-compliance": 0,
+            "sla-due-date": null
+          }
+        ]
+      }
+order: 1000

@@ -1,0 +1,80 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/cases/instances/:caseId/tasks/instances/stakeh\
+    olders?user=string&status=Exited&page=0&pageSize=10&sort=string&sortOrder=t\
+    rue"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: user
+      value: string
+      description: optional user id to be used instead of authenticated user - only
+        when bypass authenticated user is enabled
+    - key: status
+      value: Exited
+      description: optional task status (Created, Ready, Reserved, InProgress,
+        Suspended, Completed, Failed, Error, Exited, Obsolete)
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+    - key: sort
+      value: string
+      description: optional sort column, no default
+    - key: sortOrder
+      value: "true"
+      description: optional sort direction (asc, desc) - defaults to asc
+  pathVariables:
+    - key: caseId
+      value: CASE-0000000001
+      description: case instance identifier that tasks should belong to
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "task-summary": [
+          {
+            "task-id": "2",
+            "task-name": "Self Evaluation",
+            "task-subject": "",
+            "task-description": "Please perform a self-evalutation.",
+            "task-status": "Ready",
+            "task-priority": "0",
+            "task-is-skippable": "false",
+            "task-created-by": "John",
+            "task-created-on": "2016-04-05T15:09:14.206+02:00",
+            "task-activation-time": "2016-04-05T15:09:14.206+02:00",
+            "task-proc-inst-id": "2",
+            "task-proc-def-id": "evaluation",
+            "task-container-id": "myContainer",
+            "task-parent-id": "-1"
+          },
+          {
+            "task-id": "1",
+            "task-name": "Self Evaluation",
+            "task-subject": "",
+            "task-description": "Please perform a self-evalutation.",
+            "task-status": "InProgress",
+            "task-priority": "0",
+            "task-is-skippable": "false",
+            "task-actual-owner": "kiesu",
+            "task-created-by": "John",
+            "task-created-on": "2016-04-05T15:05:06.508+02:00",
+            "task-activation-time": "2016-04-05T15:05:06.508+02:00",
+            "task-proc-inst-id": "1",
+            "task-proc-def-id": "evaluation",
+            "task-container-id": "myContainer",
+            "task-parent-id": "-1"
+          }
+        ]
+      }
+order: 1000

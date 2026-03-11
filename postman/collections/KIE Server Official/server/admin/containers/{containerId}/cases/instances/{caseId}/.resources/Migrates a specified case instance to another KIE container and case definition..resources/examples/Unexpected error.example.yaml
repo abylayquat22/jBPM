@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/admin/containers/:containerId/cases/instances/:caseId?\
+    targetContainerId=string"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: targetContainerId
+      value: string
+      description: container id that new case definition should be migrated to to
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case instance belongs to
+    - key: caseId
+      value: CASE-000000001
+      description: identifier of case instance to be migrated
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 3000

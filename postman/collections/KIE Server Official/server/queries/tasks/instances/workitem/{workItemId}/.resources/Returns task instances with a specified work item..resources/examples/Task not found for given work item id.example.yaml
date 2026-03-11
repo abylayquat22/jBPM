@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/tasks/instances/workitem/:workItemId"
+  method: GET
+  pathVariables:
+    - key: workItemId
+      value: "3284"
+      description: work item id to load task associated with
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

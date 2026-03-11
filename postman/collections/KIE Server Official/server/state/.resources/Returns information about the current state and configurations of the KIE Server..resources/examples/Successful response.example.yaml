@@ -1,0 +1,89 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/state"
+  method: GET
+  headers:
+    Accept: application/json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "response": [
+          {
+            "type": "SUCCESS",
+            "msg": "Successfully loaded server state for server id default-kieserver",
+            "result": {
+              "kie-server-state-info": {
+                "controller": [
+                  "http://localhost:8080/business-central/rest/controller"
+                ],
+                "config": {
+                  "config-items": [
+                    {
+                      "itemName": "org.kie.server.location",
+                      "itemValue": "http://localhost:8080/kie-server/services/rest/server",
+                      "itemType": "java.lang.String"
+                    },
+                    {
+                      "itemName": "org.kie.server.controller.user",
+                      "itemValue": "controllerUser",
+                      "itemType": "java.lang.String"
+                    },
+                    {
+                      "itemName": "org.kie.server.controller",
+                      "itemValue": "http://localhost:8080/business-central/rest/controller",
+                      "itemType": "java.lang.String"
+                    }
+                  ]
+                },
+                "containers": [
+                  {
+                    "container-id": "employee-rostering",
+                    "release-id": {
+                      "group-id": "employeerostering",
+                      "artifact-id": "employeerostering",
+                      "version": "1.0.0-SNAPSHOT"
+                    },
+                    "resolved-release-id": null,
+                    "status": "STARTED",
+                    "scanner": {
+                      "status": "STOPPED",
+                      "poll-interval": null
+                    },
+                    "config-items": [
+                      {
+                        "itemName": "KBase",
+                        "itemValue": "",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "KSession",
+                        "itemValue": "",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "MergeMode",
+                        "itemValue": "MERGE_COLLECTIONS",
+                        "itemType": "BPM"
+                      },
+                      {
+                        "itemName": "RuntimeStrategy",
+                        "itemValue": "SINGLETON",
+                        "itemType": "BPM"
+                      }
+                    ],
+                    "messages": [],
+                    "container-alias": "employeerostering"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+order: 1000

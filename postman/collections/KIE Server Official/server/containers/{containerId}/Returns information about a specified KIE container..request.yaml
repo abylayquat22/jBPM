@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{base_url}}/server/containers/:containerId"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: Container id to be retrieved
+order: 11000

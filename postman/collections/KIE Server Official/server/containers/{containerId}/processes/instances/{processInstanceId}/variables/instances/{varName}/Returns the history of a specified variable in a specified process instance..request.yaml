@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+  stanceId/variables/instances/:varName?page=0&pageSize=10"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of the process instance that variable history should be
+      collected for
+  - key: varName
+    value: person
+    description: name of the variables that history should be collected for
+examples: ./.resources/Returns the history of a specified variable in a
+  specified process instance..resources/examples
+order: 1000

@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/definitions/:process\
+    Id/subprocesses"
+  method: GET
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id where the process definition resides
+    - key: processId
+      value: evaluation
+      description: process id that subprocesses should be retrieved from
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "subProcesses": [
+          "evaluation"
+        ]
+      }
+order: 1000

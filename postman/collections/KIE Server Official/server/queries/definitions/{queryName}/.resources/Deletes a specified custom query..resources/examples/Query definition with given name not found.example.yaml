@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/definitions/:queryName"
+  method: DELETE
+  pathVariables:
+    - key: queryName
+      value: customQuery
+      description: identifier of the query definition to be deleted
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 1000

@@ -1,0 +1,57 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/documents?page=0&pageSize=10"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "document-instances": [
+          {
+            "document-id": "001df463-2482-4dd5-abec-4622d16edaee",
+            "document-name": "MyDocument",
+            "document-link": "",
+            "document-size": 18,
+            "document-last-mod": {
+              "java.util.Date": 1539936629000
+            },
+            "document-content": null
+          },
+          {
+            "document-id": "651a7035-3a90-4a25-bffb-bb09ea14fdac",
+            "document-name": "MyDocument2",
+            "document-link": "",
+            "document-size": 18,
+            "document-last-mod": {
+              "java.util.Date": 1539936629000
+            },
+            "document-content": null
+          },
+          {
+            "document-id": "c10153e3-dfe7-41a9-811b-edd72c48f5d3",
+            "document-name": "MyDocument3",
+            "document-link": "",
+            "document-size": 18,
+            "document-last-mod": {
+              "java.util.Date": 1539936629000
+            },
+            "document-content": null
+          }
+        ]
+      }
+order: 1000

@@ -1,0 +1,35 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/processes/instances/correlation/:correlationKey"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: page
+    value: "0"
+    disabled: true
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    disabled: true
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    disabled: true
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    disabled: true
+    description: optional sort direction (asc, desc) - defaults to asc
+pathVariables:
+  - key: correlationKey
+    value: string
+    description: correlation key to filter process instance, can be given as partial
+      correlation key like in starts with approach
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+examples: ./.resources/Returns process instances with a specified correlation
+  key..resources/examples
+order: 1000

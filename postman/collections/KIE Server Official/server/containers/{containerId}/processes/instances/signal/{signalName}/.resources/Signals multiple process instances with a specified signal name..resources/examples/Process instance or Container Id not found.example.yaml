@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/signal/:si\
+    gnalName?instanceId=5240&correlationKey=string"
+  method: POST
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: instanceId
+      value: "5240"
+      description: list of identifiers of the process instances to be signaled
+    - key: correlationKey
+      value: string
+      description: list of correlationKeys of the process instances to be signaled
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+    - key: signalName
+      value: EventReceived
+      description: signal name to be send to process instance
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,60 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/status/activated"
+  method: PUT
+  headers:
+    Accept: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: Container id of deployed KIE Container
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: >-
+      {
+        "response": [
+          {
+            "type": "SUCCESS",
+            "msg": "Container MyProjectContainer successfully deployed with module com.redhat:Project1:1.0.",
+            "result": {
+              "kie-container": {
+                "container-id": "MyProjectContainer",
+                "release-id": {
+                  "artifact-id": "Project1",
+                  "group-id": "com.redhat",
+                  "version": "1.0"
+                },
+                "resolved-release-id": {
+                  "artifact-id": "Project1",
+                  "group-id": "com.redhat",
+                  "version": "1.0"
+                },
+                "status": "STARTED",
+                "scanner": {
+                  "status": "DISPOSED",
+                  "poll-interval": null
+                },
+                "config-items": [],
+                "messages": [
+                  {
+                    "severity": "INFO",
+                    "timestamp": {
+                      "java.util.Date": 1538756503852
+                    },
+                    "content": [
+                      "Container MyProjectContainer successfully created with module com.redhat:Project1:1.0."
+                    ]
+                  }
+                ],
+                "container-alias": null
+              }
+            }
+          }
+        ]
+      }
+order: 1000

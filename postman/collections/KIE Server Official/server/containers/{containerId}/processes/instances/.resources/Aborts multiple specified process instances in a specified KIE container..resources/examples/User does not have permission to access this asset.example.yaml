@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/instances?instanceId\
+    =5240"
+  method: DELETE
+  queryParams:
+    - key: instanceId
+      value: "5240"
+      description: list of identifiers of the process instances to be aborted
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that process instance belongs to
+response:
+  statusCode: 403
+  statusText: Forbidden
+  body:
+    type: text
+    content: ""
+order: 1000

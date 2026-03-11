@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/solvers/:solverId"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: containerId
+      value: string
+      description: container id where the solver config resides
+    - key: solverId
+      value: string
+      description: identifier of the solver to create
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/cases/instances/:caseId/tasks/\
+    :nodeName"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id that case instance belongs to
+    - key: caseId
+      value: CASE-00000000001
+      description: identifier of the case instance
+    - key: nodeName
+      value: sampleTask
+      description: name of the adhoc fragment to be triggered
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: text
+    content: ""
+order: 2000

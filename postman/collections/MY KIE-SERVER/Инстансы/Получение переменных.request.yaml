@@ -1,0 +1,50 @@
+$kind: http-request
+description: 'Generated from cURL: curl -X GET
+  "http://reg-jbpm1-lp1:8080/kie-server/services/rest/server/containers/kuat-sample_1.0.0-SNAPSHOT/processes/instances/22298/variables"
+  -H "accept: application/json"'
+url: "{{base_url}}/kie-server/services/rest/server/queries/processes/instances/\
+  {{processInstanceId}}/variables/instances"
+method: GET
+headers:
+  accept: application/json
+body:
+  type: json
+  content: ""
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Server response status\", function () {\r
+
+      \    if (pm.response.status !== \"OK\") {\r
+
+      \        let msg = pm.response.text();\r
+
+      \        throw new Error(JSON.stringify([msg]));\r
+
+      \    }\r
+
+      \r
+
+      \    let errors = pm.response.json()[\"variable-instance\"]\r
+
+      \        .filter(i => i[\"name\"] === \"processException\" && i[\"value\"]
+      !== null && i[\"value\"] !== undefined && i[\"value\"].trim().length !==
+      0)\r
+
+      \        .map(i => i[\"value\"]);\r
+
+      \r
+
+      \    if (errors !== null && errors.length > 0) {\r
+
+      \        throw new Error(JSON.stringify(errors))\r
+
+      \    }\r
+
+      });"
+    language: text/javascript
+order: 3000

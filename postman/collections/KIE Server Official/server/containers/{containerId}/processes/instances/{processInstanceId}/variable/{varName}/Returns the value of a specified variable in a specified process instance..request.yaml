@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+  stanceId/variable/:varName"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of the process instance that variable should be retrieved from
+  - key: varName
+    value: person
+    description: variable name to be retrieved
+examples: ./.resources/Returns the value of a specified variable in a specified
+  process instance..resources/examples
+order: 1000

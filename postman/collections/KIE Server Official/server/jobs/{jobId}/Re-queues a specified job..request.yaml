@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{baseUrl}}/server/jobs/:jobId"
+method: PUT
+pathVariables:
+  - key: jobId
+    value: "123"
+    description: identifier of the asynchronous job to be requeued
+examples: ./.resources/Re-queues a specified job..resources/examples
+order: 3000

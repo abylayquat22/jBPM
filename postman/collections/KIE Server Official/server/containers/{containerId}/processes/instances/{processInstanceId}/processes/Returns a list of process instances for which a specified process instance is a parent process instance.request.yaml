@@ -1,0 +1,39 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
+  stanceId/processes?status=3&status=3&page=0&pageSize=10&sort=string&sortOrder\
+  =true"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: status
+    value: "3"
+    description: optional process instance status (active, completed, aborted) -
+      defaults ot active (1) only
+  - key: status
+    value: "3"
+    description: optional process instance status (active, completed, aborted) -
+      defaults ot active (1) only
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    description: optional sort direction (asc, desc) - defaults to asc
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process instance belongs to
+  - key: processInstanceId
+    value: "123"
+    description: identifier of the parent process instance that process instances
+      should be collected for
+examples: ./.resources/Returns a list of process instances for which a specified
+  process instance is a parent process instance.resources/examples
+order: 1000

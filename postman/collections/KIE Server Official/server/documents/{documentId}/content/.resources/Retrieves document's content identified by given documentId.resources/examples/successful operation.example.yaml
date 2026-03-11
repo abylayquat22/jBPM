@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/documents/:documentId/content"
+  method: GET
+  headers:
+    Accept: application/octet-stream
+  pathVariables:
+    - key: documentId
+      value: xxx-yyy-zzz
+      description: document id of a document that content should be retruned from
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/octet-stream
+  body:
+    type: text
+    content: |-
+      [
+        "string",
+        "string"
+      ]
+order: 1000

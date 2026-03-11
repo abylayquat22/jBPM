@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/containers/:containerId/processes/definitions/:process\
+    Id/tasks/users"
+  method: GET
+  pathVariables:
+    - key: containerId
+      value: evaluation_1.0.0-SNAPSHOT
+      description: container id where the process definition resides
+    - key: processId
+      value: evaluation
+      description: process id that the user task definitions should be retrieved from
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

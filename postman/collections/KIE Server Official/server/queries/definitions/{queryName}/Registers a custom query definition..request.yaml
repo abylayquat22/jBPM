@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/definitions/:queryName"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: queryName
+    value: customQuery
+    description: identifier of the query definition to be registered
+body:
+  type: json
+  content: string
+examples: ./.resources/Registers a custom query definition..resources/examples
+order: 4000

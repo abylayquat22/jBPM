@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/tasks/instances/:taskInstanceId/events?page=0&\
+  pageSize=10&sort=string&sortOrder=true"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    description: optional sort direction (asc, desc) - defaults to asc
+pathVariables:
+  - key: taskInstanceId
+    value: "3284"
+    description: task id to load task events for
+examples: ./.resources/Returns events for a specified task instance..resources/examples
+order: 1000

@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/cases/processes?filter=string&page=0&pageSize=\
+  10&sort=string&sortOrder=true"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: filter
+    value: string
+    description: process definition id or name that process definitions will be filtered by
+  - key: page
+    value: "0"
+    description: optional pagination - at which page to start, defaults to 0 (meaning first)
+  - key: pageSize
+    value: "10"
+    description: optional pagination - size of the result, defaults to 10
+  - key: sort
+    value: string
+    description: optional sort column, no default
+  - key: sortOrder
+    value: "true"
+    description: optional sort direction (asc, desc) - defaults to asc
+examples: ./.resources/Returns a specified process associated with case
+  definitions from all KIE containers..resources/examples
+order: 1000

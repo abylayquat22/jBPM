@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/server/queries/processes/instances/:processInstanceId/variabl\
+  es/instances"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: processInstanceId
+    value: "22375"
+    description: process instance id to load variables current state (latest value) for
+auth:
+  type: basic
+  credentials:
+    password: "{{password}}"
+    username: "{{username}}"
+examples: ./.resources/Returns current variable values of a specified process
+  instance..resources/examples
+order: 2000

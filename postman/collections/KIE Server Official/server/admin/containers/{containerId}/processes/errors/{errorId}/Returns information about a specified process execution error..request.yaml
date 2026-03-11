@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/server/admin/containers/:containerId/processes/errors/:errorId"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id that process error belongs to
+  - key: errorId
+    value: xxx-yyy-zzz
+    description: identifier of error to be loaded
+examples: ./.resources/Returns information about a specified process execution
+  error..resources/examples
+order: 1000

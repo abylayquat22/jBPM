@@ -1,0 +1,79 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/server/queries/variables/processes/tasks?page=0&pageSize=10&o\
+    rderBy=string&asc=true"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  queryParams:
+    - key: page
+      value: "0"
+      description: optional pagination - at which page to start, defaults to 0
+        (meaning first)
+    - key: pageSize
+      value: "10"
+      description: optional pagination - size of the result, defaults to 10
+    - key: orderBy
+      value: string
+      description: optional sort column
+    - key: asc
+      value: "true"
+      description: optional sort direction - true ascending, false descending
+  body:
+    type: json
+    content: string
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "user-task-with-vars-instance": [
+          {
+            "id": 9175,
+            "name": "string",
+            "description": "string",
+            "actual-owner": "string",
+            "correlation-key": "string",
+            "potential-owners": [
+              "string",
+              "string"
+            ],
+            "process-definition-id": "string",
+            "process-instance-id": 145,
+            "task-instance-input-variables": {
+              "key_0": {}
+            },
+            "process-variables": {
+              "key_0": {},
+              "key_1": {}
+            },
+            "status": "string"
+          },
+          {
+            "id": 9220,
+            "name": "string",
+            "description": "string",
+            "actual-owner": "string",
+            "correlation-key": "string",
+            "potential-owners": [
+              "string",
+              "string"
+            ],
+            "process-definition-id": "string",
+            "process-instance-id": 1652,
+            "task-instance-input-variables": {
+              "key_0": {}
+            },
+            "process-variables": {
+              "key_0": {}
+            },
+            "status": "string"
+          }
+        ]
+      }
+order: 1000

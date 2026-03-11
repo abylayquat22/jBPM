@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/server/containers/:containerId/processes/definitions/:process\
+  Id/tasks/users/:taskName/inputs"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: containerId
+    value: evaluation_1.0.0-SNAPSHOT
+    description: container id where the process definition resides
+  - key: processId
+    value: evaluation
+    description: process id that given task belongs to
+  - key: taskName
+    value: Review
+    description: task name that input variable definitions should be retrieved for
+examples: ./.resources/Retrieves input variables defined on a given user
+  task.resources/examples
+order: 1000
