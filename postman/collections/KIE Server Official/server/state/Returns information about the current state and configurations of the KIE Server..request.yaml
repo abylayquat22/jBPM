@@ -1,8 +1,0 @@
-$kind: http-request
-url: "{{baseUrl}}/server/state"
-method: GET
-headers:
-  Accept: application/json
-examples: ./.resources/Returns information about the current state and
-  configurations of the KIE Server..resources/examples
-order: 1000
