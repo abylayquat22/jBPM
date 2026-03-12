@@ -28,8 +28,8 @@
       "LK4NB6qI": {
         "type": "task/http-request@1",
         "pos": {
-          "x": 40,
-          "y": 64
+          "x": 64,
+          "y": 72
         },
         "config": {
           "element": {
@@ -764,7 +764,7 @@
         },
         "size": {
           "width": 800,
-          "height": 640
+          "height": 624
         },
         "config": {},
         "ui": {
@@ -1049,8 +1049,8 @@
             "y": -2326
           },
           "size": {
-            "width": 1728,
-            "height": 728
+            "width": 1524,
+            "height": 832
           },
           "color": "blue"
         },
@@ -1071,7 +1071,7 @@
           "color": "teal"
         },
         "header": {
-          "title": "Получение результатов"
+          "title": "Получение результатов деплоя"
         }
       },
       "Wu7HBjSh": {
@@ -1155,10 +1155,10 @@
       "parent": null,
       "createdBy": 24785763,
       "createdOn": "2026-03-11T19:21:56.711Z",
-      "updatedOn": "2026-03-11T19:49:52.756Z",
+      "updatedOn": "2026-03-12T00:38:00.067Z",
       "fork": null,
       "type": "module",
-      "workspace": "55dea331-0970-4bbf-8320-7d03dd1306f7",
+      "workspace": "47bdc23d-6e6b-4d06-b4fd-10e7317246af",
       "permissions": {
         "canView": true,
         "canExecute": true,
@@ -1180,6 +1180,6 @@
     "_postman_id": "85af8e9d-5b16-43e6-b091-43e403a80443",
     "_postman_cloud_id": "69b1c0d451676b0dfed0e616"
   },
-  "_postman_exported_at": "2026-03-11T22:34:12.844Z",
+  "_postman_exported_at": "2026-03-12T00:40:38.547Z",
   "_postman_exported_using": "Postman/Local Mode"
 }

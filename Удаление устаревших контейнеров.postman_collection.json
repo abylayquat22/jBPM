@@ -1,0 +1,187 @@
+{
+  "info": {
+    "_postman_id": "26de6b25-7e84-4e96-bf4d-6049c8b0db0e",
+    "name": "Удаление устаревших контейнеров",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24785763",
+    "_collection_link": "https://go.postman.co/collection/24785763-26de6b25-7e84-4e96-bf4d-6049c8b0db0e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Получение списка контейнеров",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Server response status\", function () {\r",
+              "    if (pm.response.status !== \"OK\") {\r",
+              "        let msg;\r",
+              "        try {\r",
+              "            msg = pm.response.json().msg;\r",
+              "        } catch (err) {\r",
+              "            msg = pm.response.text();\r",
+              "        } finally {\r",
+              "            throw new Error(JSON.stringify([msg]));\r",
+              "        }\r",
+              "    }\r",
+              "\r",
+              "    if (pm.response.json().type !== \"SUCCESS\") {\r",
+              "        throw new Error(JSON.stringify([pm.response.json().msg]));\r",
+              "    }\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/kie-server/services/rest/server/containers?artifactId={{artifactId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "kie-server",
+            "services",
+            "rest",
+            "server",
+            "containers"
+          ],
+          "query": [
+            {
+              "key": "groupId",
+              "value": "{{groupId}}",
+              "description": "optional groupId to filter containers by",
+              "disabled": true
+            },
+            {
+              "key": "version",
+              "value": "{{version}}",
+              "description": "optional version to filter containers by",
+              "disabled": true
+            },
+            {
+              "key": "status",
+              "value": "STARTED",
+              "description": "optional status to filter containers by",
+              "disabled": true
+            },
+            {
+              "key": "artifactId",
+              "value": "{{artifactId}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Удаление контейнера",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "\r",
+              "pm.test(\"Server response status\", function () {\r",
+              "    if (pm.response.status !== \"OK\") {\r",
+              "        let msg;\r",
+              "        try {\r",
+              "            msg = pm.response.json().msg;\r",
+              "        } catch (err) {\r",
+              "            msg = pm.response.text();\r",
+              "        } finally {\r",
+              "            throw new Error(JSON.stringify([msg]));\r",
+              "        }\r",
+              "    }\r",
+              "\r",
+              "    if (pm.response.json().type !== \"SUCCESS\") {\r",
+              "        throw new Error(JSON.stringify([pm.response.json().msg]));\r",
+              "    }\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"container-id\": \"{{containerId}}\",\r\n    \"release-id\": {\r\n        \"group-id\": \"{{groupId}}\",\r\n        \"artifact-id\": \"{{artifactId}}\",\r\n        \"version\": \"{{version}}\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/kie-server/services/rest/server/containers/{{containerId}}?%3AabortProcessInstances=true",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "kie-server",
+            "services",
+            "rest",
+            "server",
+            "containers",
+            "{{containerId}}"
+          ],
+          "query": [
+            {
+              "key": "%3AabortProcessInstances",
+              "value": "true"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://reg-jbpm1-lp1:8080/kie-server/services/rest/server/admin/cases/instances?page=0&pageSize=10&sortOrder=true&withData=false\" -H \"accept: application/json\""
+      },
+      "response": []
+    }
+  ]
+}

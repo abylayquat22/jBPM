@@ -1,0 +1,339 @@
+{
+  "info": {
+    "_postman_id": "7b177715-b153-4177-8219-33c0f823acbd",
+    "name": "Деплой",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24785763",
+    "_collection_link": "https://go.postman.co/collection/24785763-7b177715-b153-4177-8219-33c0f823acbd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Deploy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Server response status\", function () {\r",
+              "    if (pm.response.status !== \"Accepted\") {\r",
+              "        throw new Error(JSON.stringify([\"Business Central response status is not 'Accepted'\"]));\r",
+              "    }\r",
+              "\r",
+              "    if (pm.response.json().status !== \"APPROVED\") {\r",
+              "        throw new Error(JSON.stringify(['Incorrect business central response status']))\r",
+              "    }\r",
+              "\r",
+              "    pm.environment.set(\"deployJobId\", pm.response.json().jobId);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/business-central/rest/spaces/{{space}}/projects/{{project}}/branches/{{branch}}/maven/deploy",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "business-central",
+            "rest",
+            "spaces",
+            "{{space}}",
+            "projects",
+            "{{project}}",
+            "branches",
+            "{{branch}}",
+            "maven",
+            "deploy"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Server response status\", function () {\r",
+              "    // Хелперы для читаемости и без спагетти\r",
+              "    function isNullOrUndefined(value) {\r",
+              "        return value === null || value === undefined;\r",
+              "    }\r",
+              "\r",
+              "    function isEmptyString(value) {\r",
+              "        return typeof value === \"string\" && value.trim().length === 0;\r",
+              "    }\r",
+              "\r",
+              "    function isEmptyArray(value) {\r",
+              "        return Array.isArray(value) && value.length === 0;\r",
+              "    }\r",
+              "\r",
+              "    if (pm.response.status !== \"OK\") {\r",
+              "        throw new Error(JSON.stringify([\"Business Central response status is not 'OK'\"]));\r",
+              "    }\r",
+              "\r",
+              "    const body = pm.response.json();\r",
+              "\r",
+              "    const statuses = [\"SUCCESS\", \"APPROVED\"];\r",
+              "    const currentStatus = body?.status;\r",
+              "\r",
+              "    if (!Array.isArray(statuses) || !statuses.includes(currentStatus)) {\r",
+              "        const errors = [];\r",
+              "\r",
+              "        const result = body?.result;\r",
+              "        if (!isNullOrUndefined(result) && !isEmptyString(result)) {\r",
+              "            errors.push(result);\r",
+              "        }\r",
+              "\r",
+              "        const detailedResult = body?.detailedResult;\r",
+              "        const detailedInvalid =\r",
+              "            isNullOrUndefined(detailedResult) ||\r",
+              "            !Array.isArray(detailedResult) ||\r",
+              "            isEmptyArray(detailedResult);\r",
+              "\r",
+              "        if (!detailedInvalid) {\r",
+              "            errors.push(detailedResult)\r",
+              "        } \r",
+              "\r",
+              "        // Финальный вброс ошибки\r",
+              "        throw new Error(JSON.stringify(errors));\r",
+              "    }\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/business-central/rest/jobs/{{deployJobId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "business-central",
+            "rest",
+            "jobs",
+            "{{deployJobId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Создание контейнера",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Server response status\", function () {\r",
+              "    if (pm.response.status !== \"Created\") {\r",
+              "        let msg;\r",
+              "        try {\r",
+              "            msg = pm.response.json().msg;\r",
+              "        } catch (err) {\r",
+              "            msg = pm.response.text();\r",
+              "        } finally {\r",
+              "            throw new Error(JSON.stringify([msg]));\r",
+              "        }\r",
+              "    }\r",
+              "\r",
+              "    if (pm.response.json().type !== \"SUCCESS\") {\r",
+              "        throw new Error(JSON.stringify([pm.response.json().msg]));\r",
+              "    }\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"container-id\": \"{{containerId}}\",\r\n    \"release-id\": {\r\n        \"group-id\": \"{{groupId}}\",\r\n        \"artifact-id\": \"{{artifactId}}\",\r\n        \"version\": \"{{version}}\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/kie-server/services/rest/server/containers/{{containerId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "kie-server",
+            "services",
+            "rest",
+            "server",
+            "containers",
+            "{{containerId}}"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://reg-jbpm1-lp1:8080/kie-server/services/rest/server/admin/cases/instances?page=0&pageSize=10&sortOrder=true&withData=false\" -H \"accept: application/json\""
+      },
+      "response": []
+    },
+    {
+      "name": "Получение контейнера",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Server response status\", function () {\r",
+              "    if (pm.response.status !== \"OK\") {\r",
+              "        let msg;\r",
+              "        try {\r",
+              "            msg = pm.response.json().msg;\r",
+              "        } catch (err) {\r",
+              "            msg = pm.response.text();\r",
+              "        } finally {\r",
+              "            throw new Error(JSON.stringify([msg]));\r",
+              "        }\r",
+              "    }\r",
+              "\r",
+              "    if (pm.response.json().type !== \"SUCCESS\") {\r",
+              "        throw new Error(JSON.stringify([pm.response.json().msg]));\r",
+              "    }\r",
+              "\r",
+              "    const container = pm.response.json()?.result?.[\"kie-container\"];\r",
+              "\r",
+              "    if (container.status === \"FAILED\") {\r",
+              "        let msg = container.messages\r",
+              "            .flatMap(m => m.content);\r",
+              "        throw new Error(JSON.stringify(msg));\r",
+              "    }\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "KAmet47*2222",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "abylay_63947",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/kie-server/services/rest/server/containers/{{containerId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "kie-server",
+            "services",
+            "rest",
+            "server",
+            "containers",
+            "{{containerId}}"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://reg-jbpm1-lp1:8080/kie-server/services/rest/server/admin/cases/instances?page=0&pageSize=10&sortOrder=true&withData=false\" -H \"accept: application/json\""
+      },
+      "response": []
+    }
+  ]
+}

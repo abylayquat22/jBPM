@@ -1,0 +1,17 @@
+# Use this workspace to collaborate
+workspace:
+  id: 47bdc23d-6e6b-4d06-b4fd-10e7317246af
+
+localResources:
+  collections:
+    - ..\Деплой.postman_collection.json
+    - ..\Получение результатов деплоя.postman_collection.json
+    - ..\Удаление устаревших контейнеров.postman_collection.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+cloudResources:
+  collections:
+    ..\postman\collections\MY KIE-SERVER: 24785763-6c283f49-d2d5-48cb-9c6f-90a3df407806
+  environments:
+    ..\postman\environments\handle_address_input_data.environment.yaml: 24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7
+    ..\postman\environments\taxpayers_service.environment.yaml: 24785763-a1195f58-29ac-406f-b57e-44c454dbea87
