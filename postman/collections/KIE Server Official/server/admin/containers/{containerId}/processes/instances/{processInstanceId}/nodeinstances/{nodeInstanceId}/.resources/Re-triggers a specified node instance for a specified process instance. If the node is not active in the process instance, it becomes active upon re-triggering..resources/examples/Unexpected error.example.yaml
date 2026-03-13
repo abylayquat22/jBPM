@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
-    cessInstanceId/nodeinstances/:nodeInstanceId"
+  url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/instances/:pr\
+    ocessInstanceId/nodeinstances/:nodeInstanceId"
   method: PUT
   pathVariables:
     - key: containerId

@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-    stanceId/workitems"
+  url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+    nstanceId/workitems"
   method: GET
   pathVariables:
     - key: containerId
@@ -16,4 +16,4 @@ response:
   body:
     type: text
     content: ""
-order: 3000
+order: 2000

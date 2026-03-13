@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-  stanceId/workitems/:workItemId/aborted"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+  nstanceId/workitems/:workItemId/aborted"
 method: PUT
 pathVariables:
   - key: containerId

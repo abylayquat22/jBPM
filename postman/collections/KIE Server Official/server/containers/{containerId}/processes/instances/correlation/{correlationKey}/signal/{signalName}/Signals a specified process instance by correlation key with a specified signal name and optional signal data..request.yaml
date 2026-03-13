@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/correlatio\
-  n/:correlationKey/signal/:signalName"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/correlati\
+  on/:correlationKey/signal/:signalName"
 method: POST
 headers:
   Content-Type: application/json
@@ -16,7 +16,7 @@ pathVariables:
     description: signal name to be sent to process instance
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Signals a specified process instance by correlation key
   with a specified signal name and optional signal data..resources/examples
 order: 1000

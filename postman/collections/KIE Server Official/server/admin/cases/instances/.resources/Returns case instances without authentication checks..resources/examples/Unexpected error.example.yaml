@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/admin/cases/instances?status=closed&page=0&pageSize=10\
-    &sort=string&sortOrder=true&withData=false"
+  url: "{{baseUrl}}:/server/admin/cases/instances?status=closed&page=0&pageSize=1\
+    0&sort=string&sortOrder=true&withData=false"
   method: GET
   queryParams:
     - key: status

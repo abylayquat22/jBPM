@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/admin/containers/:containerId/cases/instances/:caseId?\
-    targetContainerId=string"
+  url: "{{baseUrl}}:/server/admin/containers/:containerId/cases/instances/:caseId\
+    ?targetContainerId=string"
   method: PUT
   headers:
     Content-Type: application/json

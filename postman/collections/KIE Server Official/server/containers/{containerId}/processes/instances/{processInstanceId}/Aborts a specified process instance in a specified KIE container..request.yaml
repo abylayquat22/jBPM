@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-  stanceId"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+  nstanceId"
 method: DELETE
 pathVariables:
   - key: containerId
@@ -9,6 +9,4 @@ pathVariables:
   - key: processInstanceId
     value: "123"
     description: identifier of the process instance to be aborted
-examples: ./.resources/Aborts a specified process instance in a specified KIE
-  container..resources/examples
 order: 9000

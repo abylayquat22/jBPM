@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/correlatio\
-    n/:correlationKey/signal/:signalName"
+  url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/correlati\
+    on/:correlationKey/signal/:signalName"
   method: POST
   headers:
     Content-Type: application/json

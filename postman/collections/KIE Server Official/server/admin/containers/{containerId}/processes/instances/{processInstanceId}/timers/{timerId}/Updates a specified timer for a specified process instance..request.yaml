@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
-  cessInstanceId/timers/:timerId?relative=true"
+url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/instances/:pr\
+  ocessInstanceId/timers/:timerId?relative=true"
 method: PUT
 headers:
   Content-Type: application/json
@@ -21,7 +21,7 @@ pathVariables:
     description: identifier of timer instance to be updated
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Updates a specified timer for a specified process
   instance..resources/examples
 order: 1000

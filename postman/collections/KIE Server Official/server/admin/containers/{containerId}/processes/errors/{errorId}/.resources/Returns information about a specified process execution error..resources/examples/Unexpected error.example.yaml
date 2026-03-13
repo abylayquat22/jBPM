@@ -1,6 +1,6 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/errors/:errorId"
+  url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/errors/:errorId"
   method: GET
   pathVariables:
     - key: containerId

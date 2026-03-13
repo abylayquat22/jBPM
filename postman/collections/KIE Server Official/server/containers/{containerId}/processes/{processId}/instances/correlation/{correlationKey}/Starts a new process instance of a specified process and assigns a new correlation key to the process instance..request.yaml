@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/:processId/instances\
-  /correlation/:correlationKey"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/:processId/instance\
+  s/correlation/:correlationKey"
 method: POST
 headers:
   Content-Type: application/json
@@ -17,7 +17,7 @@ pathVariables:
     description: correlation key to be assigned to process instance
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Starts a new process instance of a specified process and
   assigns a new correlation key to the process instance..resources/examples
 order: 2000

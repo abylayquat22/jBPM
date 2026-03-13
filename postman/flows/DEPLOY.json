@@ -38,52 +38,9 @@
             "name": "Получение списка контейнеров",
             "method": "GET"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "z0L75-tL",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "3RHQkzMb",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "artifactId"
-            },
-            {
-              "id": "9hzGfHvv",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "groupId"
-            },
-            {
-              "id": "l0vJbXdh",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "version"
-            },
-            {
-              "id": "FVX6T300",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "StliPLLl",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -154,61 +111,9 @@
             "name": "Удаление контейнера",
             "method": "DELETE"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "JDrFNZ0R",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "6byyEzR9",
-              "type": "value/reference@2",
-              "kind": "reference",
-              "value": "",
-              "key": "containerId",
-              "__noIn": true,
-              "isExtraneous": false
-            },
-            {
-              "id": "P2Kptpn2",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "groupId"
-            },
-            {
-              "id": "z3HmGG2E",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "artifactId"
-            },
-            {
-              "id": "nCHbI3Qt",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "version"
-            },
-            {
-              "id": "jMl0ftUI",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "aP1ojjTU",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -245,52 +150,9 @@
             "name": "Deploy",
             "method": "POST"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "3H_dmBxi",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "g_Wxcbsz",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "space"
-            },
-            {
-              "id": "yGOGcZGD",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "project"
-            },
-            {
-              "id": "BxokWQnN",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "branch"
-            },
-            {
-              "id": "LNXyTlN9",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "iQwVVsml",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -316,59 +178,9 @@
             "name": "Создание контейнера",
             "method": "PUT"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "FwERtZXy",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "TGhXceod",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "containerId"
-            },
-            {
-              "id": "aN-BpANO",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "groupId"
-            },
-            {
-              "id": "QjD00nJM",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "artifactId"
-            },
-            {
-              "id": "_6kA59Gr",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "version"
-            },
-            {
-              "id": "T5PXCA1q",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "-L37qgJO",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -393,24 +205,9 @@
             "name": "Получение контейнера",
             "method": "GET"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "hdS-CqG8",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "w_BZq2Rm",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "containerId"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -469,47 +266,9 @@
             "name": "Статическая диаграмма процесса",
             "method": "GET"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "text",
-          "requestVariables": [
-            {
-              "id": "y_MIL36c",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "X9LNenkA",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "containerId"
-            },
-            {
-              "id": "_JsjIHFD",
-              "type": "value/reference@2",
-              "kind": "reference",
-              "value": "",
-              "key": "processId",
-              "__noIn": true,
-              "isExtraneous": false
-            },
-            {
-              "id": "rGSUlkhA",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "Mxdrqc0C",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -536,38 +295,9 @@
             "name": "Получение списка процессов",
             "method": "GET"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "kSEQsi3E",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "24owmp96",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "containerId"
-            },
-            {
-              "id": "iMMOEovG",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "R9Wx6LV8",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -658,38 +388,9 @@
             "name": "Check",
             "method": "GET"
           },
-          "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
+          "environment": null,
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "qb_yPDDn",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "eRrSMpum",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "deployJobId"
-            },
-            {
-              "id": "lIEYCpuA",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "YITZQpo_",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -938,18 +639,6 @@
         "sourcePort": "stream",
         "targetPort": "variables|ovm6izY0"
       },
-      "QmO0Je25": {
-        "source": "7f815t5v",
-        "target": "NdqtVpaj",
-        "sourcePort": "stream",
-        "targetPort": "requestVariables|_JsjIHFD"
-      },
-      "8_CIe6OQ": {
-        "source": "DfvDtAcB",
-        "target": "0VianG5J",
-        "sourcePort": "stream",
-        "targetPort": "requestVariables|6byyEzR9"
-      },
       "VRnNgmUB": {
         "source": "h57o7A18",
         "target": "1pkpsAe_",
@@ -1180,6 +869,6 @@
     "_postman_id": "85af8e9d-5b16-43e6-b091-43e403a80443",
     "_postman_cloud_id": "69b1c0d451676b0dfed0e616"
   },
-  "_postman_exported_at": "2026-03-12T00:40:38.547Z",
+  "_postman_exported_at": "2026-03-13T06:03:33.768Z",
   "_postman_exported_using": "Postman/Local Mode"
 }

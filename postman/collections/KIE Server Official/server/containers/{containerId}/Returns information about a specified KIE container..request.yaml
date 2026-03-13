@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{base_url}}/server/containers/:containerId"
+url: "{{base_url}}:/server/containers/:containerId"
 method: GET
 headers:
   Accept: application/json

@@ -1,9 +1,0 @@
-$kind: http-request
-url: "{{baseUrl}}/server/documents/:documentId"
-method: DELETE
-pathVariables:
-  - key: documentId
-    value: xxxx-yyy-zzz
-    description: document id of a document that should be deleted
-examples: ./.resources/Deletes a specified document from KIE Server..resources/examples
-order: 4000

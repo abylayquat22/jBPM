@@ -1,6 +1,6 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/containers/:containerId/processes/:processId/instances"
+  url: "{{baseUrl}}:/server/containers/:containerId/processes/:processId/instances"
   method: POST
   headers:
     Content-Type: application/json

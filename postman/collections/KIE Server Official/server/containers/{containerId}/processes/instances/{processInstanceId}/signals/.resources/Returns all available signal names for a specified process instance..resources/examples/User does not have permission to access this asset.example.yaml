@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-    stanceId/signals"
+  url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+    nstanceId/signals"
   method: GET
   pathVariables:
     - key: containerId

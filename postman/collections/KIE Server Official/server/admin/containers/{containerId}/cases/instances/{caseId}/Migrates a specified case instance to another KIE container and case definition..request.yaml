@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/admin/containers/:containerId/cases/instances/:caseId?\
-  targetContainerId=string"
+url: "{{baseUrl}}:/server/admin/containers/:containerId/cases/instances/:caseId\
+  ?targetContainerId=string"
 method: PUT
 headers:
   Content-Type: application/json
@@ -18,7 +18,7 @@ pathVariables:
     description: identifier of case instance to be migrated
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Migrates a specified case instance to another KIE
   container and case definition..resources/examples
 order: 1000

@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/admin/cases/instances?status=open&status=closed&page=0\
-  &pageSize=10&sort=string&sortOrder=true&withData=false"
+url: "{{baseUrl}}:/server/admin/cases/instances?status=open&status=closed&page=\
+  0&pageSize=10&sort=string&sortOrder=true&withData=false"
 method: GET
 headers:
   Accept: application/json

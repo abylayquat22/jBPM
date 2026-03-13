@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{baseUrl}}/server/admin/containers/:containerId/processes/errors/:errorId"
+url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/errors/:errorId"
 method: GET
 headers:
   Accept: application/json

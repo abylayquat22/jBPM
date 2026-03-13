@@ -6,8 +6,9 @@ headers:
 auth:
   type: basic
   credentials:
-    password: "{{password}}"
     username: "{{username}}"
+    password: "{{password}}"
+    showPassword: false
 examples: ./.resources/Returns information about the KIE Server. The endpoint
   for this request is the base URL for the REST API..resources/examples
 order: 11000

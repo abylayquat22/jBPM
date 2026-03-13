@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
-    cessInstanceId/timers"
+  url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/instances/:pr\
+    ocessInstanceId/timers"
   method: GET
   headers:
     Accept: application/json

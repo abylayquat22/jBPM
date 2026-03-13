@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-    stanceId/signal/:signalName"
+  url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+    nstanceId/signal/:signalName"
   method: POST
   headers:
     Content-Type: application/json

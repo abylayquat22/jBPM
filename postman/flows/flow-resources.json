@@ -1,4 +1,158 @@
 {
   "version": 1,
-  "flows": {}
+  "flows": {
+    "85af8e9d-5b16-43e6-b091-43e403a80443": {
+      "path": "C:/Users/abyla/jBPM/postman/flows/DEPLOY.json",
+      "dependencies": [
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-b9a99678-acb4-4185-aca7-73fb0e435d93",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-3717c351-a9bd-4074-b632-1e1a17bd6c8f",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-e99f7a84-c471-4fda-9553-e8c71015edd6",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-a67ba8a7-32b6-42d3-97b3-181d2f7386e6",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-3587098f-fb2c-43fe-b14d-b6d3c41d2c84",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-8ac79451-8ea4-4636-94d4-c1da14175748",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-54377528-89f9-4841-b41c-9d70570b5c10",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-180a1a84-2700-4296-b975-0cb91f4ce3a5",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        }
+      ]
+    },
+    "16b94861-10c1-4061-8262-b80c96b8383f": {
+      "path": "C:/Users/abyla/jBPM/postman/flows/PROCESS.json",
+      "dependencies": [
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-2ab6b5b0-2365-4a41-8eb0-d72e52bcf338",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-162db4f4-c4b5-4fce-8598-938ae4432400",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-5dd7e14d-061d-40f9-a31a-e6b5bff44867",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-aed73920-f2a3-4a33-9c63-144745bc0bac",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        },
+        {
+          "local": {
+            "collectionId": "24785763-8e5673c2-1a6f-47e1-bbf4-5381763ca85d",
+            "requestId": "24785763-909e6a55-6b41-4bfc-a2c6-334509230ba4",
+            "filePath": ""
+          },
+          "cloud": {
+            "collectionId": null,
+            "requestId": null
+          }
+        }
+      ]
+    }
+  }
 }

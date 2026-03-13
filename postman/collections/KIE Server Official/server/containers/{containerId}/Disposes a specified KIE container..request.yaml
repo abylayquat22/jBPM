@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId?abortProcessInstances=true"
+url: "{{baseUrl}}:/server/containers/:containerId?abortProcessInstances=true"
 method: DELETE
 headers:
   Accept: application/json
@@ -12,5 +12,4 @@ pathVariables:
   - key: containerId
     value: evaluation_1.0.0-SNAPSHOT
     description: Container id to be disposed (undeployed)
-examples: ./.resources/Disposes a specified KIE container..resources/examples
 order: 13000

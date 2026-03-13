@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-  stanceId/workitems"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+  nstanceId/workitems"
 method: GET
 headers:
   Accept: application/json

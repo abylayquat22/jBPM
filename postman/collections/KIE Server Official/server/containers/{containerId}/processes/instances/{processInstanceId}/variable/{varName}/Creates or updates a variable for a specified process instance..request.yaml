@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-  stanceId/variable/:varName"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+  nstanceId/variable/:varName"
 method: PUT
 headers:
   Content-Type: application/json
@@ -16,7 +16,7 @@ pathVariables:
     description: name of the variable to be set/updated
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Creates or updates a variable for a specified process
   instance..resources/examples
 order: 2000

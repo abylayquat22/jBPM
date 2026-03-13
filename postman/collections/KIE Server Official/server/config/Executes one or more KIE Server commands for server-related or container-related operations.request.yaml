@@ -6,7 +6,7 @@ headers:
   Accept: application/json
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Executes one or more KIE Server commands for
   server-related or container-related operations.resources/examples
 order: 1000

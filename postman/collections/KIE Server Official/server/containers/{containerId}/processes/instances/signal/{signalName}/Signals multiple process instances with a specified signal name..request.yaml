@@ -1,7 +1,7 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/signal/:si\
-  gnalName?instanceId=2813&instanceId=5240&correlationKey=string&correlationKey\
-  =string"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/signal/:s\
+  ignalName?instanceId=2813&instanceId=5240&correlationKey=string&correlationKe\
+  y=string"
 method: POST
 headers:
   Content-Type: application/json
@@ -27,7 +27,7 @@ pathVariables:
     description: signal name to be send to process instance
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Signals multiple process instances with a specified
   signal name..resources/examples
 order: 1000

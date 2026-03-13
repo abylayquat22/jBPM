@@ -1,7 +1,7 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-    stanceId/variable/:varName"
+  url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+    nstanceId/variable/:varName"
   method: PUT
   headers:
     Content-Type: application/json

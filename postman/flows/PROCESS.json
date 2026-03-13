@@ -39,50 +39,7 @@
           },
           "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "SyQk81ND",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "fZyQz2AO",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "containerId"
-            },
-            {
-              "id": "VnizgjKV",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "processId"
-            },
-            {
-              "id": "_OXy3LnW",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "inp_body_string"
-            },
-            {
-              "id": "T9_QniPE",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            },
-            {
-              "id": "OfSmDRgY",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -110,36 +67,7 @@
           },
           "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "33etdXpK",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "1Xhcm6Xv",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "processInstanceId"
-            },
-            {
-              "id": "Z7Xoo4bJ",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "8sbl_5aF",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -256,45 +184,7 @@
           },
           "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
           "parseBody": "text",
-          "requestVariables": [
-            {
-              "id": "VknTQrfg",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "OQ7eLnll",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "containerId"
-            },
-            {
-              "id": "6qOxqFWm",
-              "type": "value/reference@2",
-              "kind": "reference",
-              "value": "",
-              "key": "processInstanceId",
-              "__noIn": true,
-              "isExtraneous": false
-            },
-            {
-              "id": "zdVTVGax",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "OiFsBtBF",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -321,38 +211,7 @@
           },
           "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "nsdd92V5",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "KKkQqP-F",
-              "type": "value/reference@2",
-              "kind": "reference",
-              "value": "",
-              "key": "processInstanceId",
-              "__noIn": true,
-              "isExtraneous": false
-            },
-            {
-              "id": "JzS-ZBXE",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "oGQkJ3vP",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -429,45 +288,7 @@
           },
           "environment": "24785763-071c7b2e-515a-4526-a125-8f8a9b76a0d7",
           "parseBody": "auto",
-          "requestVariables": [
-            {
-              "id": "wH2V5g2K",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "base_url"
-            },
-            {
-              "id": "QMf-Psn0",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "containerId"
-            },
-            {
-              "id": "UT-qQ6Um",
-              "type": "value/reference@2",
-              "kind": "reference",
-              "value": "",
-              "key": "processInstanceId",
-              "__noIn": true,
-              "isExtraneous": false
-            },
-            {
-              "id": "JCHa3GDx",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "password"
-            },
-            {
-              "id": "qwbZDV6G",
-              "type": null,
-              "kind": null,
-              "value": null,
-              "key": "username"
-            }
-          ],
+          "requestVariables": [],
           "scriptsModifyEnvVars": true,
           "trackGlobalEnvironment": true,
           "requestVariables__expanded": true
@@ -636,24 +457,6 @@
         "sourcePort": "out",
         "targetPort": "stream"
       },
-      "h8hJOth5": {
-        "source": "JbeU2rOj",
-        "target": "ve5Y90jQ",
-        "sourcePort": "stream",
-        "targetPort": "requestVariables|6qOxqFWm"
-      },
-      "2GkfOrEw": {
-        "source": "JbeU2rOj",
-        "target": "to1oZ4xp",
-        "sourcePort": "stream",
-        "targetPort": "requestVariables|KKkQqP-F"
-      },
-      "yIu6OXlo": {
-        "source": "JbeU2rOj",
-        "target": "Apx4qfd3",
-        "sourcePort": "stream",
-        "targetPort": "requestVariables|UT-qQ6Um"
-      },
       "jbAAEKas": {
         "source": "DS7gemqP",
         "target": "47MWPzdm",
@@ -800,6 +603,6 @@
     "_postman_id": "16b94861-10c1-4061-8262-b80c96b8383f",
     "_postman_cloud_id": "69b1c30051676b0dfed0e73e"
   },
-  "_postman_exported_at": "2026-03-12T00:40:39.600Z",
+  "_postman_exported_at": "2026-03-12T03:48:46.545Z",
   "_postman_exported_using": "Postman/Local Mode"
 }

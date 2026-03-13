@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
-  cessInstanceId/subprocess?targetContainerId=string&targetProcessId=string"
+url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/instances/:pr\
+  ocessInstanceId/subprocess?targetContainerId=string&targetProcessId=string"
 method: PUT
 headers:
   Content-Type: application/json
@@ -21,7 +21,7 @@ pathVariables:
     description: list of identifiers of process instance to be migrated
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Migrates a specified process instance with all
   subprocesses to process definition in another KIE
   container..resources/examples

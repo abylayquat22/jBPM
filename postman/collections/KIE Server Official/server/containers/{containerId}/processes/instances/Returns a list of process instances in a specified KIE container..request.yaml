@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances?status=3&s\
-  tatus=3&page=0&pageSize=10&sort=string&sortOrder=true"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances?status=3&\
+  status=3&page=0&pageSize=10&sort=string&sortOrder=true"
 method: GET
 headers:
   Accept: application/json
@@ -29,6 +29,4 @@ pathVariables:
   - key: containerId
     value: evaluation_1.0.0-SNAPSHOT
     description: container id that process instance belongs to
-examples: ./.resources/Returns a list of process instances in a specified KIE
-  container..resources/examples
 order: 4000

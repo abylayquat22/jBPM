@@ -1,8 +1,8 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances/:pro\
-    cessInstanceId/errors?includeAck=false&node=string&page=0&pageSize=10&sort=\
-    string&sortOrder=true"
+  url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/instances/:pr\
+    ocessInstanceId/errors?includeAck=false&node=string&page=0&pageSize=10&sort\
+    =string&sortOrder=true"
   method: GET
   headers:
     Accept: application/json

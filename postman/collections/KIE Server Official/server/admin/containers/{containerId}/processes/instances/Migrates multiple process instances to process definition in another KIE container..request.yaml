@@ -1,7 +1,7 @@
 $kind: http-request
-url: "{{baseUrl}}/server/admin/containers/:containerId/processes/instances?proc\
-  essInstanceId=2813&processInstanceId=5240&targetContainerId=string&targetProc\
-  essId=string"
+url: "{{baseUrl}}:/server/admin/containers/:containerId/processes/instances?pro\
+  cessInstanceId=2813&processInstanceId=5240&targetContainerId=string&targetPro\
+  cessId=string"
 method: PUT
 headers:
   Content-Type: application/json
@@ -25,7 +25,7 @@ pathVariables:
     description: container id that process instances belongs to
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Migrates multiple process instances to process definition
   in another KIE container..resources/examples
 order: 2000

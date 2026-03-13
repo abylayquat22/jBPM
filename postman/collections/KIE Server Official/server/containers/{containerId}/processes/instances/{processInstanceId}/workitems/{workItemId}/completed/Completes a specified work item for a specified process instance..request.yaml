@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-  stanceId/workitems/:workItemId/completed"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+  nstanceId/workitems/:workItemId/completed"
 method: PUT
 headers:
   Content-Type: application/json
@@ -16,7 +16,7 @@ pathVariables:
     description: identifier of the work item to complete
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Completes a specified work item for a specified process
   instance..resources/examples
 order: 1000

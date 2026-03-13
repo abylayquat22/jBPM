@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers?groupId=string&artifactId=string&version=st\
-  ring&status=string"
+url: "{{baseUrl}}:/server/containers?groupId=string&artifactId=string&version=s\
+  tring&status=string"
 method: GET
 headers:
   Accept: application/json
@@ -20,8 +20,7 @@ queryParams:
 auth:
   type: basic
   credentials:
-    password: "{{password}}"
     username: "{{username}}"
-examples: ./.resources/Returns a list of KIE containers on the KIE
-  Server..resources/examples
+    password: "{{password}}"
+    showPassword: false
 order: 3000

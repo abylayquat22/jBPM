@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/:processId/instances"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/:processId/instances"
 method: POST
 headers:
   Content-Type: application/json
@@ -13,7 +13,7 @@ pathVariables:
     description: process id that new instance should be created from
 body:
   type: json
-  content: string
+  content: ""
 examples: ./.resources/Starts a new process instance of a specified
   process..resources/examples
 order: 3000

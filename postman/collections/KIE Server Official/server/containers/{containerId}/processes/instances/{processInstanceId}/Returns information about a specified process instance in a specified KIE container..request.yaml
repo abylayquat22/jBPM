@@ -1,6 +1,6 @@
 $kind: http-request
-url: "{{baseUrl}}/server/containers/:containerId/processes/instances/:processIn\
-  stanceId?withVars=true"
+url: "{{baseUrl}}:/server/containers/:containerId/processes/instances/:processI\
+  nstanceId?withVars=true"
 method: GET
 headers:
   Accept: application/json
@@ -15,6 +15,4 @@ pathVariables:
   - key: processInstanceId
     value: "123"
     description: identifier of the process instance to be fetched
-examples: ./.resources/Returns information about a specified process instance in
-  a specified KIE container..resources/examples
 order: 8000
